@@ -4,10 +4,12 @@ let tweets = [
 	{
 		username: "President Biden",
 		content: "I'll do what it takes to bring inflation down.<br>But I won't accept the Republican argument that too many Americans have found good jobs and have more dignity in the workplace.  Or that our largest, most profitable corporations shouldn't have to pay their fair share.",
+		meta: {retweets: "3,563", likes: "12.4K", comments: "5,614"},
 	},
 	{
 		username: "President Biden",
 		content: "Ted Cruz said that folks who are receiving student debt relief are a bunch of \"slackers.\"<br>Who in God's name do these guys think they are?",
+		meta: {retweets: "16.3K", likes: "93.2K", comments: "22.4K"},
 	}
 ];
 
@@ -21,7 +23,7 @@ const app = createApp({
 });
 
 const Tweet = {
-	props: ["username", "content"],
+	props: ["username", "content", "meta"],
 	template: `
 	<div class="tweet border-b p-4 flex flex-row space-x-4">
 		<div class="tweet-left flex-none">
@@ -39,10 +41,19 @@ const Tweet = {
 				<p v-html="content" class=""></p>
 			</div>
 			<div class="tweet-footer w-full">
-				<div class="tweet-actions grid grid-cols-4 text-l text-slate-500">
-					<ion-icon name="chatbox-outline"></ion-icon>
-					<ion-icon name="repeat-outline"></ion-icon>
-					<ion-icon name="heart-outline"></ion-icon>
+				<div class="tweet-actions grid grid-cols-4 text-slate-500">
+					<span>
+						<ion-icon name="chatbox-outline" class="text-l leading-normal align-middle"></ion-icon>
+						<span class="text-sm leading-normal align-middle ml-1">{{ meta.comments }}</span>
+					</span>
+					<span>
+						<ion-icon name="repeat-outline" class="text-l leading-normal align-middle"></ion-icon>
+						<span class="text-sm leading-normal align-middle ml-1">{{ meta.retweets }}</span>
+					</span>
+					<span>
+						<ion-icon name="heart-outline" class="text-l leading-normal align-middle"></ion-icon>
+						<span class="text-sm leading-normal align-middle ml-1">{{ meta.likes }}</span>
+					</span>
 					<ion-icon name="share-outline"></ion-icon>
 				</div>
 			</div>
