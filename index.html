@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Interpretable Misinformation Detection</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+		<h1>Interpretable Misinformation Detection</h1>
+
+		<div id="content">
+			<div id="feed">
+				<tweet v-for="tweet in tweets" :username="tweet.username" :content="tweet.content"></tweet>
+			</div>
+		</div>
+
+		<script src="main.js" type="module"></script>
+	</body>
+</html>
