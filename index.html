@@ -11,10 +11,12 @@
 	<body>
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-		<h1>Interpretable Misinformation Detection</h1>
+		<div id="header" class="w-1/2 mx-auto my-4">
+			<h1 class="text-xl">Interpretable Misinformation Detection Twitter Feed</h1>
+		</div>
 
-		<div id="content">
-			<div id="feed">
+		<div id="content" class="">
+			<div id="feed" class="w-1/2 mx-auto border-x border-t">
 				<tweet v-for="tweet in tweets" :username="tweet.username" :content="tweet.content"></tweet>
 			</div>
 		</div>

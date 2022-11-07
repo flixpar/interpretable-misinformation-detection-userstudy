@@ -3,11 +3,11 @@ const { createApp } = Vue;
 let tweets = [
 	{
 		username: "President Biden",
-		content: "I'll do what it takes to bring inflation down.\n\nBut I won't accept the Republican argument that too many Americans have found good jobs and have more dignity in the workplace.  Or that our largest, most profitable corporations shouldn’t have to pay their fair share.",
+		content: "I'll do what it takes to bring inflation down.<br>But I won't accept the Republican argument that too many Americans have found good jobs and have more dignity in the workplace.  Or that our largest, most profitable corporations shouldn't have to pay their fair share.",
 	},
 	{
 		username: "President Biden",
-		content: "Ted Cruz said that folks who are receiving student debt relief are a bunch of \"slackers.\"\nWho in God’s name do these guys think they are?",
+		content: "Ted Cruz said that folks who are receiving student debt relief are a bunch of \"slackers.\"<br>Who in God's name do these guys think they are?",
 	}
 ];
 
@@ -23,15 +23,21 @@ const app = createApp({
 const Tweet = {
 	props: ["username", "content"],
 	template: `
-	<div class="tweet">
-		<div class="tweet-header">
-			<div class="tweet-user">
-				<img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" alt="avatar" class="rounded-full">
-				<h4>{{ username }}</h4>
+	<div class="tweet border-b p-4 flex flex-row space-x-4">
+		<div class="tweet-left flex-none">
+			<div class="tweet-user-img">
+				<img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" alt="avatar" class="rounded-full w-14">
 			</div>
 		</div>
-		<div class="tweet-content">
-			<p>{{ content }}</p>
+		<div class="tweet-right flex flex-col space-y-2">
+			<div class="tweet-header">
+				<div class="tweet-user flex flex-row items-center">
+					<h4 class="font-semibold">{{ username }}</h4>
+				</div>
+			</div>
+			<div class="tweet-content">
+				<p v-html="content" class=""></p>
+			</div>
 		</div>
 	</div>
 	`
