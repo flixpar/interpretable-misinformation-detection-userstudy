@@ -29,7 +29,7 @@ const Tweet = {
 				<img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" alt="avatar" class="rounded-full w-14">
 			</div>
 		</div>
-		<div class="tweet-right flex flex-col space-y-2">
+		<div class="tweet-right flex flex-col space-y-2 w-full">
 			<div class="tweet-header">
 				<div class="tweet-user flex flex-row items-center">
 					<h4 class="font-semibold">{{ username }}</h4>
@@ -38,10 +38,20 @@ const Tweet = {
 			<div class="tweet-content">
 				<p v-html="content" class=""></p>
 			</div>
+			<div class="tweet-footer w-full">
+				<div class="tweet-actions grid grid-cols-4 text-l text-slate-500">
+					<ion-icon name="chatbox-outline"></ion-icon>
+					<ion-icon name="repeat-outline"></ion-icon>
+					<ion-icon name="heart-outline"></ion-icon>
+					<ion-icon name="share-outline"></ion-icon>
+				</div>
+			</div>
 		</div>
 	</div>
 	`
 };
+
+app.config.isCustomElement = tag => tag.startsWith("ion-");
 
 app.component("Tweet", Tweet);
 app.mount("#feed");
