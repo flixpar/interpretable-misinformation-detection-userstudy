@@ -2,12 +2,20 @@ const { createApp } = Vue;
 
 let tweets = [
 	{
-		username: "President Biden",
+		user: {
+			name: "President Biden",
+			username: "POTUS",
+			img: "https://pbs.twimg.com/profile_images/1380530524779859970/TfwVAbyX_400x400.jpg",
+		},
 		content: "I'll do what it takes to bring inflation down.<br>But I won't accept the Republican argument that too many Americans have found good jobs and have more dignity in the workplace.  Or that our largest, most profitable corporations shouldn't have to pay their fair share.",
 		meta: {retweets: "3,563", likes: "12.4K", comments: "5,614"},
 	},
 	{
-		username: "President Biden",
+		user: {
+			name: "President Biden",
+			username: "POTUS",
+			img: "https://pbs.twimg.com/profile_images/1380530524779859970/TfwVAbyX_400x400.jpg",
+		},
 		content: "Ted Cruz said that folks who are receiving student debt relief are a bunch of \"slackers.\"<br>Who in God's name do these guys think they are?",
 		meta: {retweets: "16.3K", likes: "93.2K", comments: "22.4K"},
 	}
@@ -23,18 +31,23 @@ const app = createApp({
 });
 
 const Tweet = {
-	props: ["username", "content", "meta"],
+	props: ["user", "content", "meta"],
+	data() {
+		return {
+			userImg: (this.user.img) ? this.user.img : `https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y`,
+		}
+	},
 	template: `
 	<div class="tweet border-b p-4 flex flex-row space-x-4">
 		<div class="tweet-left flex-none">
 			<div class="tweet-user-img">
-				<img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" alt="avatar" class="rounded-full w-14">
+				<img v-bind:src="userImg" alt="avatar" class="rounded-full w-14">
 			</div>
 		</div>
 		<div class="tweet-right flex flex-col space-y-2 w-full">
 			<div class="tweet-header">
 				<div class="tweet-user flex flex-row items-center">
-					<h4 class="font-semibold">{{ username }}</h4>
+					<h4 class="font-semibold">{{ user.name }}</h4>
 				</div>
 			</div>
 			<div class="tweet-content">
