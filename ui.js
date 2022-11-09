@@ -93,7 +93,7 @@ const Tweet = {
 	components: {"explanation": ExplanationDisplay},
 	template: `
 	<div class="tweet-container border-b flex flex-row">
-		<div class="tweet p-4 flex flex-row space-x-4">
+		<div class="tweet p-4 flex flex-row space-x-4 w-full">
 			<div class="tweet-left flex-none">
 				<div class="tweet-user-img">
 					<img v-bind:src="userImg" alt="avatar" class="rounded-full w-14">

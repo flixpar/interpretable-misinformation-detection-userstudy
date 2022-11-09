@@ -235,6 +235,6 @@ let tweets = [
 ];
 
 function getTweets() {
-	const tweetsShuffled = tweets.sort((a, b) => 0.5 - Math.random());
+	const tweetsShuffled = tweets.sort((a, b) => a["user"]["id"] >= b["user"]["id"] ? -1 : 1);
 	return tweetsShuffled;
 }
