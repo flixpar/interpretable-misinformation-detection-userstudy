@@ -8,6 +8,7 @@ const app = createApp({
 	data() {
 		return {
 			"tweets": getTweets(),
+			"explanationType": "none",
 		}
 	}
 });
@@ -16,4 +17,4 @@ app.config.isCustomElement = tag => tag.startsWith("ion-");
 
 app.component("Tweet", Tweet);
 app.component("Explanaion", ExplanationDisplay);
-app.mount("#feed");
+app.mount("#content");

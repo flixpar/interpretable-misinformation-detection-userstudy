@@ -7,7 +7,7 @@ function colorscale(score) {
 }
 
 function colorscaleSimple(score) {
-	if (score >= 0.7) {
+	if (score >= 0.5) {
 		return "red";
 	} else {
 		return "green";
@@ -15,10 +15,11 @@ function colorscaleSimple(score) {
 }
 
 const ExplanationDisplay = {
-	props: ["misinformationScore", "explanation"],
+	props: ["misinformationScore", "explanation", "explanationType"],
 	data() {
 		return {
-			"showExplanation": (this.misinformationScore >= 0.4),
+			"showScore": (this.explanationType != "none"),
+			"showExplanation": (this.misinformationScore >= 0.5) && (this.explanationType == "expl"),
 			"hover": false,
 		}
 	},
@@ -26,9 +27,15 @@ const ExplanationDisplay = {
 		colorscaleSimple: colorscaleSimple,
 		colorscale: colorscale,
 	},
+	watch: {
+		"explanationType": function (newVal, oldVal) {
+			this.showScore = (newVal != "none");
+			this.showExplanation = (this.misinformationScore >= 0.5) && (newVal == "expl");
+		}
+	},
 	template: `
 	<div class="explanation-display h-full flex flex-row cursor-pointer" @mouseover="hover=true" @mouseleave="hover=false">
-		<div class="misinforamtion-score-bar h-full">
+		<div class="misinforamtion-score-bar h-full" v-if="showScore">
 			<div class="misinformation-score-bar-inner h-full w-1" :style="{backgroundColor: colorscaleSimple(misinformationScore)}"></div>
 		</div>
 		<div class="explanation absolute bg-slate-50 p-4 rounded text-sm w-72 ml-1" v-if="showExplanation" v-show="hover">
@@ -77,7 +84,7 @@ const ExplanationDisplay = {
 };
 
 const Tweet = {
-	props: ["user", "content", "meta", "misinformationScore", "explanation"],
+	props: ["user", "content", "meta", "misinformationScore", "explanation", "explanationType"],
 	data() {
 		return {
 			userImg: (this.user.img) ? this.user.img : `https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y`,
@@ -121,7 +128,7 @@ const Tweet = {
 			</div>
 		</div>
 		<div class="tweet-side">
-			<explanation v-bind:explanation="explanation" v-bind:misinformation-score="misinformationScore"></explanation>
+			<explanation :explanation="explanation" :misinformation-score="misinformationScore" :explanation-type="explanationType"></explanation>
 		</div>
 	</div>
 	`
