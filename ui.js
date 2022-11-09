@@ -1,49 +1,79 @@
 export { Tweet, ExplanationDisplay };
 
 
+function colorscale(score) {
+	if (score >= 0.7) {
+		return "red";
+	} else if (score >= 0.4) {
+		return "orange";
+	} else {
+		return "green";
+	}
+}
+
+function colorscaleSimple(score) {
+	if (score >= 0.7) {
+		return "red";
+	} else {
+		return "green";
+	}
+}
+
 const ExplanationDisplay = {
 	props: ["misinformationScore", "explanation"],
 	data() {
-		let scoreColor = "bg-green-500";
-		if (this.misinformationScore >= 0.7) {
-			scoreColor = "bg-red-500";
-		} else if (this.misinformationScore >= 0.4) {
-			scoreColor = "bg-yellow-500";
-		}
-
 		return {
 			"showExplanation": (this.misinformationScore >= 0.4),
 			"hover": false,
-			"scoreColor": scoreColor,
 		}
+	},
+	methods: {
+		colorscaleSimple: colorscaleSimple,
+		colorscale: colorscale,
 	},
 	template: `
 	<div class="explanation-display h-full flex flex-row cursor-pointer" @mouseover="hover=true" @mouseleave="hover=false">
 		<div class="misinforamtion-score-bar h-full">
-			<div class="misinformation-score-bar-inner" :class="['h-full w-1', scoreColor]"></div>
+			<div class="misinformation-score-bar-inner h-full w-1" :style="{backgroundColor: colorscaleSimple(misinformationScore)}"></div>
 		</div>
 		<div class="explanation absolute bg-slate-50 p-4 rounded text-sm w-72 ml-1" v-if="showExplanation" v-show="hover">
 			<div class="explanation-header border-b border-slate-300">
 				<h3 class="font-semibold">Explanation</h3>
 			</div>
 			<div class="explanation-content">
-				<div class="explanation-content-score">
-					<h4 class="font-semibold">Score</h4>
-					<div class="explanation-score-bar-outer h-2 w-full border border-slate-300">
-						<div class="explanation-score-bar-inner h-2" v-bind:class="scoreColor" v-bind:style="{width: misinformationScore * 100 + '%'}"></div>
+				<div class="explanation-overallscore">
+					<h4 class="font-semibold">Overall Score</h4>
+					<div class="explanation-score-bar-outer w-full border border-slate-300">
+						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(misinformationScore), width: misinformationScore * 100 + '%'}"></div>
 					</div>
 				</div>
-				<div class="explanation-content-topics">
-					<h4 class="font-semibold">Topics</h4>
-					<ul class="list-disc list-inside">
-						<li v-for="topic in explanation.topics">{{ topic }}</li>
-					</ul>
+
+				<div class="explanation-textscore">
+					<h4 class="">Text Score</h4>
+					<div class="explanation-score-bar-outer w-full border border-slate-300">
+						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.textScore), width: explanation.textScore * 100 + '%'}"></div>
+					</div>
 				</div>
-				<div class="explanation-content-phrases">
-					<h4 class="font-semibold">Phrases</h4>
-					<ul class="list-disc list-inside">
-						<li v-for="phrase in explanation.phrases">{{ phrase }}</li>
-					</ul>
+
+				<div class="explanation-userscore">
+					<h4 class="">User Score</h4>
+					<div class="explanation-score-bar-outer w-full border border-slate-300">
+						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.userScore), width: explanation.userScore * 100 + '%'}"></div>
+					</div>
+				</div>
+
+				<div class="explanation-linkscore" v-if="explanation.linkScore>=0">
+					<h4 class="">Links Score</h4>
+					<div class="explanation-score-bar-outer w-full border border-slate-300">
+						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.linkScore), width: explanation.linkScore * 100 + '%'}"></div>
+					</div>
+				</div>
+
+				<div class="explanation-hashtagscore" v-if="explanation.hashtagScore>=0">
+					<h4 class="">Hashtags Score</h4>
+					<div class="explanation-score-bar-outer w-full border border-slate-300">
+						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.hashtagScore), width: explanation.hashtagScore * 100 + '%'}"></div>
+					</div>
 				</div>
 			</div>
 		</div>
