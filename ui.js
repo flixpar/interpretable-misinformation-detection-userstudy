@@ -2,13 +2,8 @@ export { Tweet, ExplanationDisplay };
 
 
 function colorscale(score) {
-	if (score >= 0.7) {
-		return "red";
-	} else if (score >= 0.4) {
-		return "orange";
-	} else {
-		return "green";
-	}
+	let f = chroma.scale(["green", "red"]).domain([0, 1]);
+	return f(score).hex();
 }
 
 function colorscaleSimple(score) {
