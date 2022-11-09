@@ -131,13 +131,13 @@ let tweets = [
 			"retweets": 160,
 			"replies": 15
 		},
-		"misinformationScore": 0.0,
+		"misinformationScore": 0.4,
 		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"hashtagScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0
+			"textScore": 0.5,
+			"linkScore": 0.4,
+			"hashtagScore": -1,
+			"userScore": 0.2,
+			"engagementScore": 0.2
 		}
 	},
 	{
@@ -154,13 +154,13 @@ let tweets = [
 			"retweets": 27,
 			"replies": 3
 		},
-		"misinformationScore": 0.0,
+		"misinformationScore": 0.3,
 		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"hashtagScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0
+			"textScore": 0.6,
+			"linkScore": 0.1,
+			"hashtagScore": -1,
+			"userScore": 0.1,
+			"engagementScore": 0.2
 		}
 	},
 	{
@@ -177,13 +177,13 @@ let tweets = [
 			"retweets": 15,
 			"replies": 6
 		},
-		"misinformationScore": 0.0,
+		"misinformationScore": 0.05,
 		"explanation": {
-			"textScore": 0.0,
+			"textScore": 0.1,
 			"linkScore": 0.0,
-			"hashtagScore": 0.0,
+			"hashtagScore": -1,
 			"userScore": 0.0,
-			"engagementScore": 0.0
+			"engagementScore": 0.1
 		}
 	},
 	{
@@ -200,13 +200,13 @@ let tweets = [
 			"retweets": 2,
 			"replies": 3
 		},
-		"misinformationScore": 0.0,
+		"misinformationScore": 0.48,
 		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"hashtagScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0
+			"textScore": 0.5,
+			"linkScore": -1,
+			"hashtagScore": -1,
+			"userScore": 0.4,
+			"engagementScore": 0.2
 		}
 	},
 	{
@@ -223,13 +223,13 @@ let tweets = [
 			"retweets": 64,
 			"replies": 4
 		},
-		"misinformationScore": 0.0,
+		"misinformationScore": 0.4,
 		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"hashtagScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0
+			"textScore": 0.5,
+			"linkScore": -1,
+			"hashtagScore": -1,
+			"userScore": 0.2,
+			"engagementScore": 0.4
 		}
 	}
 ];

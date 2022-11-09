@@ -19,7 +19,7 @@ const ExplanationDisplay = {
 	data() {
 		return {
 			"showScore": (this.explanationType != "none"),
-			"showExplanation": (this.misinformationScore >= 0.5) && (this.explanationType == "expl"),
+			"showExplanation": (this.explanationType == "expl"),
 			"hover": false,
 		}
 	},
@@ -30,7 +30,7 @@ const ExplanationDisplay = {
 	watch: {
 		"explanationType": function (newVal, oldVal) {
 			this.showScore = (newVal != "none");
-			this.showExplanation = (this.misinformationScore >= 0.5) && (newVal == "expl");
+			this.showExplanation = (newVal == "expl");
 		}
 	},
 	template: `
