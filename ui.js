@@ -2,7 +2,7 @@ export { Tweet, ExplanationDisplay };
 
 
 function colorscale(score) {
-	let f = chroma.scale(["green", "red"]).domain([0, 1]);
+	let f = chroma.scale(["green", "yellow", "red"]).domain([0, 1]);
 	return f(score).hex();
 }
 
