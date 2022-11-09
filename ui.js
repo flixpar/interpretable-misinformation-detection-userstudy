@@ -80,7 +80,7 @@ const Tweet = {
 					<div class="tweet-actions grid grid-cols-4 text-slate-500">
 						<span>
 							<ion-icon name="chatbox-outline" class="text-l leading-normal align-middle"></ion-icon>
-							<span class="text-sm leading-normal align-middle ml-1">{{ meta.comments }}</span>
+							<span class="text-sm leading-normal align-middle ml-1">{{ meta.replies }}</span>
 						</span>
 						<span>
 							<ion-icon name="repeat-outline" class="text-l leading-normal align-middle"></ion-icon>
