@@ -106,7 +106,7 @@ const Tweet = {
 					</div>
 				</div>
 				<div class="tweet-content">
-					<p v-html="content" class=""></p>
+					<p v-html="content" class="whitespace-pre-wrap"></p>
 				</div>
 				<div class="tweet-footer w-full">
 					<div class="tweet-actions grid grid-cols-4 text-slate-500">
