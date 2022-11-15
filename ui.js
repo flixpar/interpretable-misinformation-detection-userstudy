@@ -14,6 +14,20 @@ function colorscaleSimple(score) {
 	}
 }
 
+const ScoreBar = {
+	props: ["score"],
+	data() {
+		return {
+			"color": colorscale(this.score)
+		}
+	},
+	template: `
+		<div class="score-bar-outer w-full border border-slate-300">
+			<div class="score-bar-inner h-2" :style="{backgroundColor: this.color, width: score*100 + '%'}"></div>
+		</div>
+	`,
+}
+
 const ExplanationDisplay = {
 	props: ["misinformationScore", "explanation", "explanationType"],
 	data() {
@@ -33,6 +47,7 @@ const ExplanationDisplay = {
 			this.showExplanation = (newVal == "expl");
 		}
 	},
+	components: {"ScoreBar": ScoreBar},
 	template: `
 	<div class="explanation-display h-full flex flex-row cursor-pointer" @mouseover="hover=true" @mouseleave="hover=false">
 		<div class="misinforamtion-score-bar h-full" v-if="showScore">
@@ -45,30 +60,19 @@ const ExplanationDisplay = {
 			<div class="explanation-content">
 				<div class="explanation-overallscore">
 					<h4 class="font-semibold">Overall Score</h4>
-					<div class="explanation-score-bar-outer w-full border border-slate-300">
-						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(misinformationScore), width: misinformationScore * 100 + '%'}"></div>
-					</div>
+					<score-bar :score="misinformationScore"></score-bar>
 				</div>
-
 				<div class="explanation-textscore">
 					<h4 class="">Text Score</h4>
-					<div class="explanation-score-bar-outer w-full border border-slate-300">
-						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.textScore), width: explanation.textScore * 100 + '%'}"></div>
-					</div>
+					<score-bar :score="explanation.textScore"></score-bar>
 				</div>
-
 				<div class="explanation-userscore">
 					<h4 class="">User Score</h4>
-					<div class="explanation-score-bar-outer w-full border border-slate-300">
-						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.userScore), width: explanation.userScore * 100 + '%'}"></div>
-					</div>
+					<score-bar :score="explanation.userScore"></score-bar>
 				</div>
-
 				<div class="explanation-linkscore" v-if="explanation.linkScore>=0">
 					<h4 class="">Links Score</h4>
-					<div class="explanation-score-bar-outer w-full border border-slate-300">
-						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.linkScore), width: explanation.linkScore * 100 + '%'}"></div>
-					</div>
+					<score-bar :score="explanation.linkScore"></score-bar>
 				</div>
 			</div>
 		</div>
