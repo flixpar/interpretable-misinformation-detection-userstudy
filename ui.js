@@ -15,16 +15,33 @@ function colorscaleSimple(score) {
 }
 
 const ScoreBar = {
-	props: ["score"],
+	props: ["scoreName", "score"],
 	data() {
+		let barWidth = 0, margin = 0;
+		if (this.score >= 0.5) {
+			barWidth = (this.score - 0.5) * 100;
+			margin = 50;
+		} else {
+			barWidth = (0.5 - this.score) * 100;
+			margin = 50 - barWidth;
+		}
 		return {
-			"color": colorscale(this.score)
+			"color": colorscale(this.score),
+			"barWidth": barWidth + "%",
+			"margin": margin + "%",
 		}
 	},
 	template: `
-		<div class="score-bar-outer w-full border border-slate-300">
-			<div class="score-bar-inner h-2" :style="{backgroundColor: this.color, width: score*100 + '%'}"></div>
+	<div class="explanation-score-bar mt-1" v-if="score>=0">
+		<div class="flex flex-row justify-between">
+			<h4 class="font-semibold leading-4">{{ scoreName }}</h4>
+			<p class="text-xs leading-4">{{ (score*100).toFixed(0) }}%</p>
 		</div>
+		<div class="score-bar-outer w-full border border-slate-300">
+			<div class="score-bar-inner h-2" :style="{backgroundColor: this.color, width: this.barWidth, marginLeft: this.margin}"></div>
+			<span class="score-bar-divider absolute left-1/2 -mt-3 w-0.5 h-4 bg-black"></span>
+		</div>
+	</div>
 	`,
 }
 
@@ -58,22 +75,10 @@ const ExplanationDisplay = {
 				<h3 class="font-semibold">Explanation</h3>
 			</div>
 			<div class="explanation-content">
-				<div class="explanation-overallscore">
-					<h4 class="font-semibold">Overall Score</h4>
-					<score-bar :score="misinformationScore"></score-bar>
-				</div>
-				<div class="explanation-textscore">
-					<h4 class="">Text Score</h4>
-					<score-bar :score="explanation.textScore"></score-bar>
-				</div>
-				<div class="explanation-userscore">
-					<h4 class="">User Score</h4>
-					<score-bar :score="explanation.userScore"></score-bar>
-				</div>
-				<div class="explanation-linkscore" v-if="explanation.linkScore>=0">
-					<h4 class="">Links Score</h4>
-					<score-bar :score="explanation.linkScore"></score-bar>
-				</div>
+				<score-bar score-name="Overall Score" :score="misinformationScore"></score-bar>
+				<score-bar score-name="Text Score" :score="explanation.textScore"></score-bar>
+				<score-bar score-name="User Score" :score="explanation.userScore"></score-bar>
+				<score-bar score-name="Link Score" :score="explanation.linkScore"></score-bar>
 			</div>
 		</div>
 	</div>
