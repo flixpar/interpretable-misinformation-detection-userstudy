@@ -96,6 +96,7 @@ const Tweet = {
 				<div class="tweet-header">
 					<div class="tweet-user flex flex-row items-center">
 						<h4 class="font-semibold">{{ user.name }}</h4>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="verified" class="w-4 ml-1" v-if="user.verified">
 					</div>
 				</div>
 				<div class="tweet-content">
