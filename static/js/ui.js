@@ -17,13 +17,25 @@ function colorscaleSimple(score) {
 const ScoreBar = {
 	props: ["score"],
 	data() {
+		let barWidth = 0, margin = 0;
+		if (this.score >= 0.5) {
+			barWidth = (this.score - 0.5) * 100;
+			margin = 50;
+		} else {
+			barWidth = (0.5 - this.score) * 100;
+			margin = 50 - barWidth;
+		}
 		return {
-			"color": colorscale(this.score)
+			"color": colorscale(this.score),
+			"barWidth": barWidth + "%",
+			"margin": margin + "%",
 		}
 	},
 	template: `
 		<div class="score-bar-outer w-full border border-slate-300">
-			<div class="score-bar-inner h-2" :style="{backgroundColor: this.color, width: score*100 + '%'}"></div>
+			<div class="score-bar-inner h-2" :style="{backgroundColor: this.color, width: this.barWidth, marginLeft: this.margin}"></div>
+			<span class="score-bar-divider" style="margin-left: 50%; width: 2px; background-color: black;"></span>
+			<p class="text-xs text-center" hidden>{{(score*100).toFixed(0)}}%</p>
 		</div>
 	`,
 }
