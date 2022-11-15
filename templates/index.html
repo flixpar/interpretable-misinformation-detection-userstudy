@@ -32,7 +32,7 @@
 				</div>
 			</div>
 			<div id="feed" class="w-1/2 mx-auto border-x border-t">
-				<tweet v-for="tweet in tweets" v-bind="tweet" :explanation-type="explanationType"></tweet>
+				<explained-tweet v-for="tweet in tweets" v-bind="tweet" :explanation-type="explanationType"></explained-tweet>
 			</div>
 		</div>
 

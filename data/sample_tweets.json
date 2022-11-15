@@ -1,8 +1,8 @@
 [
 	{
-		"id": "1344763622371823622",
+		"tweetId": "1344763622371823622",
 		"user": {
-			"id": "223344260",
+			"userId": "223344260",
 			"name": "Cindy C Edwards",
 			"username": "cindycedwards",
 			"verified": false,
@@ -23,9 +23,9 @@
 		}
 	},
 	{
-		"id": "1344415277728100360",
+		"tweetId": "1344415277728100360",
 		"user": {
-			"id": "471883962",
+			"userId": "471883962",
 			"name": "K Thomas",
 			"username": "Nesara311T",
 			"verified": false,
@@ -46,9 +46,9 @@
 		}
 	},
 	{
-		"id": "1326131980413542400",
+		"tweetId": "1326131980413542400",
 		"user": {
-			"id": "195271137",
+			"userId": "195271137",
 			"name": "Larry Elder",
 			"username": "larryelder",
 			"verified": true,
@@ -69,9 +69,9 @@
 		}
 	},
 	{
-		"id": "1588683756743053317",
+		"tweetId": "1588683756743053317",
 		"user": {
-			"id": "1488696626054983681",
+			"userId": "1488696626054983681",
 			"name": "Arien Y",
 			"username": "ArienY1389",
 			"verified": false,
@@ -92,9 +92,9 @@
 		}
 	},
 	{
-		"id": "1321240805965733889",
+		"tweetId": "1321240805965733889",
 		"user": {
-			"id": "999117662776188928",
+			"userId": "999117662776188928",
 			"name": "Juan D.",
 			"username": "JuanDel93535298",
 			"verified": false,
@@ -115,9 +115,9 @@
 		}
 	},
 	{
-		"id": "1514263463706730507",
+		"tweetId": "1514263463706730507",
 		"user": {
-			"id": "48111864",
+			"userId": "48111864",
 			"name": "Alec Stapp",
 			"username": "AlecStapp",
 			"verified": false,
@@ -138,9 +138,9 @@
 		}
 	},
 	{
-		"id": "1590054649012178944",
+		"tweetId": "1590054649012178944",
 		"user": {
-			"id": "1437478379511500801",
+			"userId": "1437478379511500801",
 			"name": "The Baltimore Banner",
 			"username": "BaltimoreBanner",
 			"verified": true,
@@ -161,9 +161,9 @@
 		}
 	},
 	{
-		"id": "1590003755898097668",
+		"tweetId": "1590003755898097668",
 		"user": {
-			"id": "51241574",
+			"userId": "51241574",
 			"name": "The Associated Press",
 			"username": "AP",
 			"verified": true,
@@ -184,9 +184,9 @@
 		}
 	},
 	{
-		"id": "1589659716246175746",
+		"tweetId": "1589659716246175746",
 		"user": {
-			"id": "14959056",
+			"userId": "14959056",
 			"name": "Lisa Sy \ud83e\udd8b",
 			"username": "lisasy",
 			"verified": false,
@@ -207,9 +207,9 @@
 		}
 	},
 	{
-		"id": "1590321058384527360",
+		"tweetId": "1590321058384527360",
 		"user": {
-			"id": "1360246645087219716",
+			"userId": "1360246645087219716",
 			"name": "Philosophy of Mind",
 			"username": "Phi_of_Mind",
 			"verified": false,

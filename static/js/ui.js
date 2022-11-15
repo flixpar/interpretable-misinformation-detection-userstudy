@@ -1,4 +1,4 @@
-export { Tweet, ExplanationDisplay };
+export { Tweet, ExplainedTweet };
 
 
 function colorscale(score) {
@@ -85,54 +85,71 @@ const ExplanationDisplay = {
 	`
 };
 
-const Tweet = {
-	props: ["user", "content", "meta", "misinformationScore", "explanation", "explanationType"],
+const TweetContent = {
+	props: ["tweetId", "user", "content", "meta"],
 	data() {
 		return {
 			userImg: (this.user.img) ? this.user.img : `https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y`,
 		}
 	},
-	components: {"explanation": ExplanationDisplay},
 	template: `
-	<div class="tweet-container border-b flex flex-row">
-		<div class="tweet p-4 flex flex-row space-x-4 w-full">
-			<div class="tweet-left flex-none">
-				<div class="tweet-user-img">
-					<img v-bind:src="userImg" alt="avatar" class="rounded-full w-14">
-				</div>
-			</div>
-			<div class="tweet-right flex flex-col space-y-2 w-full">
-				<div class="tweet-header">
-					<div class="tweet-user flex flex-row items-center">
-						<h4 class="font-semibold">{{ user.name }}</h4>
-						<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="verified" class="w-4 ml-1" v-if="user.verified">
-					</div>
-				</div>
-				<div class="tweet-content">
-					<p v-html="content" class="whitespace-pre-wrap"></p>
-				</div>
-				<div class="tweet-footer w-full">
-					<div class="tweet-actions grid grid-cols-4 text-slate-500">
-						<span>
-							<ion-icon name="chatbox-outline" class="text-l leading-normal align-middle"></ion-icon>
-							<span class="text-sm leading-normal align-middle ml-1">{{ meta.replies }}</span>
-						</span>
-						<span>
-							<ion-icon name="repeat-outline" class="text-l leading-normal align-middle"></ion-icon>
-							<span class="text-sm leading-normal align-middle ml-1">{{ meta.retweets }}</span>
-						</span>
-						<span>
-							<ion-icon name="heart-outline" class="text-l leading-normal align-middle"></ion-icon>
-							<span class="text-sm leading-normal align-middle ml-1">{{ meta.likes }}</span>
-						</span>
-						<ion-icon name="share-outline"></ion-icon>
-					</div>
-				</div>
+	<div class="tweet p-4 flex flex-row space-x-4 w-full">
+		<div class="tweet-left flex-none">
+			<div class="tweet-user-img">
+				<img v-bind:src="userImg" alt="avatar" class="rounded-full w-14">
 			</div>
 		</div>
-		<div class="tweet-side">
-			<explanation :explanation="explanation" :misinformation-score="misinformationScore" :explanation-type="explanationType"></explanation>
+		<div class="tweet-right flex flex-col space-y-2 w-full">
+			<div class="tweet-header">
+				<div class="tweet-user flex flex-row items-center">
+					<h4 class="font-semibold">{{ user.name }}</h4>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="verified" class="w-4 ml-1" v-if="user.verified">
+				</div>
+			</div>
+			<div class="tweet-content">
+				<p v-html="content" class="whitespace-pre-wrap"></p>
+			</div>
+			<div class="tweet-footer w-full">
+				<div class="tweet-actions grid grid-cols-4 text-slate-500">
+					<span>
+						<ion-icon name="chatbox-outline" class="text-l leading-normal align-middle"></ion-icon>
+						<span class="text-sm leading-normal align-middle ml-1">{{ meta.replies }}</span>
+					</span>
+					<span>
+						<ion-icon name="repeat-outline" class="text-l leading-normal align-middle"></ion-icon>
+						<span class="text-sm leading-normal align-middle ml-1">{{ meta.retweets }}</span>
+					</span>
+					<span>
+						<ion-icon name="heart-outline" class="text-l leading-normal align-middle"></ion-icon>
+						<span class="text-sm leading-normal align-middle ml-1">{{ meta.likes }}</span>
+					</span>
+					<ion-icon name="share-outline"></ion-icon>
+				</div>
+			</div>
 		</div>
 	</div>
 	`
+};
+
+const Tweet = {
+	props: ["tweetId", "user", "content", "meta"],
+	components: {"TweetContent": TweetContent},
+	template: `
+	<div class="tweet-container border-b">
+		<tweet-content :tweet-id="tweetId" :user="user" :content="content" :meta="meta"></tweet-content>
+	</div>
+	`,
+};
+
+const ExplainedTweet = {
+	props: ["tweetId", "user", "content", "meta", "misinformationScore", "explanation", "explanationType"],
+	components: {"TweetContent": TweetContent, "ExplanationDisplay": ExplanationDisplay},
+	template: `
+	<div class="tweet-container border-b flex flex-row">
+		<tweet-content :tweet-id="tweetId" :user="user" :content="content" :meta="meta"></tweet-content>
+		<div class="tweet-side">
+			<explanation-display :explanation="explanation" :misinformation-score="misinformationScore" :explanation-type="explanationType"></explanation-display>
+		</div>
+	</div>
+	`,
 };

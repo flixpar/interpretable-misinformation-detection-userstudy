@@ -157,9 +157,9 @@ def tweet_content(tweet):
 
 def process_tweet(tweet):
 	tweet = {
-		"id": tweet["id"],
+		"tweetId": tweet["id"],
 		"user": {
-			"id": tweet["author_id"],
+			"userId": tweet["author_id"],
 			"name": users[tweet["author_id"]]["name"],
 			"username": users[tweet["author_id"]]["username"],
 			"verified": users[tweet["author_id"]]["verified"],
