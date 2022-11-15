@@ -19,7 +19,7 @@ tweet_ids = [
 ]
 payload = {
 	"ids": ",".join(tweet_ids),
-	"tweet.fields": "created_at,public_metrics",
+	"tweet.fields": "created_at,public_metrics,entities",
 	"expansions": "author_id",
 	"user.fields": "name,username,verified,profile_image_url",
 }

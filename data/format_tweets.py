@@ -147,6 +147,14 @@ tweets_raw = data["data"]
 users_raw = data["includes"]["users"]
 users = {user["id"]: user for user in users_raw}
 
+def tweet_content(tweet):
+	text = tweet["text"]
+	if "entities" in tweet and "urls" in tweet["entities"]:
+		link_tag = lambda u: f"<a href='{u['expanded_url']}' class='tweet-link'>{u['display_url']}</a>"
+		for url_info in tweet["entities"]["urls"]:
+			text = text.replace(url_info["url"], link_tag(url_info))
+	return text
+
 def process_tweet(tweet):
 	tweet = {
 		"id": tweet["id"],
@@ -157,7 +165,7 @@ def process_tweet(tweet):
 			"verified": users[tweet["author_id"]]["verified"],
 			"img": users[tweet["author_id"]]["profile_image_url"],
 		},
-		"content": tweet["text"],
+		"content": tweet_content(tweet),
 		"meta": {
 			"likes": tweet["public_metrics"]["like_count"],
 			"retweets": tweet["public_metrics"]["retweet_count"],
