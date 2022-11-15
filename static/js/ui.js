@@ -93,30 +93,28 @@ const UserSurveyComponent = {
 		}
 	},
 	template: `
-	<div class="user-survey-component border-t pt-3">
+	<div class="user-survey-component border-t pt-3 pb-1">
 		<div class="radio-button-group flex flex-row justify-evenly">
-			<p class="text-sm text-gray-400">Not Misinformation</p>
 			<div class="radio-button flex flex-col items-center">
 				<input type="radio" :id="radio-tweetId-1" value="1" v-model="score">
-				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-1">1</label>
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-1">Not Misinformation</label>
 			</div>
 			<div class="radio-button flex flex-col items-center">
 				<input type="radio" :id="radio-tweetId-2" value="2" v-model="score">
-				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-2">2</label>
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-2"></label>
 			</div>
 			<div class="radio-button flex flex-col items-center">
 				<input type="radio" :id="radio-tweetId-3" value="3" v-model="score">
-				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-3">3</label>
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-3">Unsure</label>
 			</div>
 			<div class="radio-button flex flex-col items-center">
 				<input type="radio" :id="radio-tweetId-4" value="4" v-model="score">
-				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-4">4</label>
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-4"></label>
 			</div>
 			<div class="radio-button flex flex-col items-center">
 				<input type="radio" :id="radio-tweetId-5" value="5" v-model="score">
-				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-5">5</label>
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-5">Misinformation</label>
 			</div>
-			<p class="text-sm text-gray-400">Misinformation</p>
 		</div>
 	</div>
 	`,
