@@ -20,7 +20,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.8,
 			"linkScore": 0.95,
-			"hashtagScore": -1,
 			"userScore": 0.85,
 			"engagementScore": 0.5
 		}
@@ -43,7 +42,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.8,
 			"linkScore": -1,
-			"hashtagScore": -1,
 			"userScore": 0.95,
 			"engagementScore": 0.5
 		}
@@ -66,7 +64,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.7,
 			"linkScore": 0.8,
-			"hashtagScore": -1,
 			"userScore": 0.6,
 			"engagementScore": 0.4
 		}
@@ -89,7 +86,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.45,
 			"linkScore": 0.75,
-			"hashtagScore": -1,
 			"userScore": 0.58,
 			"engagementScore": 0.52
 		}
@@ -112,7 +108,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.9,
 			"linkScore": 0.55,
-			"hashtagScore": -1,
 			"userScore": 0.55,
 			"engagementScore": -1
 		}
@@ -135,7 +130,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.5,
 			"linkScore": 0.4,
-			"hashtagScore": -1,
 			"userScore": 0.2,
 			"engagementScore": 0.2
 		}
@@ -158,7 +152,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.6,
 			"linkScore": 0.1,
-			"hashtagScore": -1,
 			"userScore": 0.1,
 			"engagementScore": 0.2
 		}
@@ -181,7 +174,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.1,
 			"linkScore": 0.0,
-			"hashtagScore": -1,
 			"userScore": 0.0,
 			"engagementScore": 0.1
 		}
@@ -204,7 +196,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.5,
 			"linkScore": -1,
-			"hashtagScore": -1,
 			"userScore": 0.4,
 			"engagementScore": 0.2
 		}
@@ -227,7 +218,6 @@ let tweets = [
 		"explanation": {
 			"textScore": 0.5,
 			"linkScore": -1,
-			"hashtagScore": -1,
 			"userScore": 0.2,
 			"engagementScore": 0.4
 		}

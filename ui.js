@@ -70,13 +70,6 @@ const ExplanationDisplay = {
 						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.linkScore), width: explanation.linkScore * 100 + '%'}"></div>
 					</div>
 				</div>
-
-				<div class="explanation-hashtagscore" v-if="explanation.hashtagScore>=0">
-					<h4 class="">Hashtags Score</h4>
-					<div class="explanation-score-bar-outer w-full border border-slate-300">
-						<div class="explanation-score-bar-inner h-2" :style="{backgroundColor: colorscale(explanation.hashtagScore), width: explanation.hashtagScore * 100 + '%'}"></div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
