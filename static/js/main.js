@@ -7,9 +7,14 @@ const { createApp } = Vue;
 const app = createApp({
 	data() {
 		return {
-			"tweets": getTweets(),
+			"tweets": [],
 			"explanationType": "none",
 		}
+	},
+	created() {
+		getTweets().then((tweets) => {
+			this.tweets = tweets;
+		});
 	}
 });
 
