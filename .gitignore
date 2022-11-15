@@ -1,5 +1,7 @@
 __pycache__/
 
+survey.db
+
 backup/
 tmp/
 secrets.sh
