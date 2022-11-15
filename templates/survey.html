@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Interpretable Misinformation Detection</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+		<div id="header" class="w-1/2 mx-auto my-4">
+			<h1 class="text-xl">Interpretable Misinformation Detection Twitter Feed</h1>
+		</div>
+
+		<div id="content" class="mb-8">
+			<div id="feed" class="w-1/2 mx-auto border-x border-t">
+				<survey-tweet v-for="tweet in tweets" v-bind="tweet" :explanation-type="explanationType"></survey-tweet>
+			</div>
+		</div>
+
+		<style>
+			.tweet-link {
+				color: revert;
+			}
+		</style>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js" integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<script src="static/js/data.js" type="module"></script>
+		<script src="static/js/ui.js" type="module"></script>
+		<script src="static/js/main.js" type="module"></script>
+
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

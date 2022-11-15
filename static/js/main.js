@@ -1,8 +1,8 @@
 import { getTweets } from "./data.js";
-import { Tweet, ExplainedTweet } from "./ui.js";
-
+import { Tweet, ExplainedTweet, SurveyTweet } from "./ui.js";
 
 const { createApp } = Vue;
+
 
 const app = createApp({
 	data() {
@@ -22,4 +22,5 @@ app.config.isCustomElement = tag => tag.startsWith("ion-");
 
 app.component("Tweet", Tweet);
 app.component("ExplainedTweet", ExplainedTweet);
+app.component("SurveyTweet", SurveyTweet);
 app.mount("#content");

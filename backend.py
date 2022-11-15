@@ -13,6 +13,10 @@ def index():
 def tweets():
 	return send_file("data/sample_tweets.json")
 
+@app.route("/survey")
+def survey():
+	return render_template("survey.html")
+
 @app.teardown_appcontext
 def shutdown_session(exception=None):
 	db_session.remove()

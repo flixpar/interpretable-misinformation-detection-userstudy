@@ -1,4 +1,4 @@
-export { Tweet, ExplainedTweet };
+export { Tweet, ExplainedTweet, SurveyTweet };
 
 
 function colorscale(score) {
@@ -85,6 +85,43 @@ const ExplanationDisplay = {
 	`
 };
 
+const UserSurveyComponent = {
+	props: ["tweetId"],
+	data() {
+		return {
+			"score": -1,
+		}
+	},
+	template: `
+	<div class="user-survey-component border-t pt-3">
+		<div class="radio-button-group flex flex-row justify-evenly">
+			<p class="text-sm text-gray-400">Not Misinformation</p>
+			<div class="radio-button flex flex-col items-center">
+				<input type="radio" :id="radio-tweetId-1" value="1" v-model="score">
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-1">1</label>
+			</div>
+			<div class="radio-button flex flex-col items-center">
+				<input type="radio" :id="radio-tweetId-2" value="2" v-model="score">
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-2">2</label>
+			</div>
+			<div class="radio-button flex flex-col items-center">
+				<input type="radio" :id="radio-tweetId-3" value="3" v-model="score">
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-3">3</label>
+			</div>
+			<div class="radio-button flex flex-col items-center">
+				<input type="radio" :id="radio-tweetId-4" value="4" v-model="score">
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-4">4</label>
+			</div>
+			<div class="radio-button flex flex-col items-center">
+				<input type="radio" :id="radio-tweetId-5" value="5" v-model="score">
+				<label class="radio-label text-xs text-gray-400" :for="radio-tweetId-5">5</label>
+			</div>
+			<p class="text-sm text-gray-400">Misinformation</p>
+		</div>
+	</div>
+	`,
+};
+
 const TweetContent = {
 	props: ["tweetId", "user", "content", "meta"],
 	data() {
@@ -147,6 +184,22 @@ const ExplainedTweet = {
 	template: `
 	<div class="tweet-container border-b flex flex-row">
 		<tweet-content :tweet-id="tweetId" :user="user" :content="content" :meta="meta"></tweet-content>
+		<div class="tweet-side">
+			<explanation-display :explanation="explanation" :misinformation-score="misinformationScore" :explanation-type="explanationType"></explanation-display>
+		</div>
+	</div>
+	`,
+};
+
+const SurveyTweet = {
+	props: ["tweetId", "user", "content", "meta", "misinformationScore", "explanation", "explanationType"],
+	components: {"TweetContent": TweetContent, "ExplanationDisplay": ExplanationDisplay, "UserSurveyComponent": UserSurveyComponent},
+	template: `
+	<div class="tweet-container border-b flex flex-row">
+		<div class="flex flex-col w-full">
+			<tweet-content :tweet-id="tweetId" :user="user" :content="content" :meta="meta"></tweet-content>
+			<user-survey-component :tweet-id="tweetId"></user-survey-component>
+		</div>
 		<div class="tweet-side">
 			<explanation-display :explanation="explanation" :misinformation-score="misinformationScore" :explanation-type="explanationType"></explanation-display>
 		</div>
