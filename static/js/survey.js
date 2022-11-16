@@ -1,4 +1,4 @@
-import { getTweets } from "./data.js";
+import { getTweetGroup, getTweetGroupOrder } from "./data.js";
 import { SurveyTweet } from "./ui.js";
 
 const { createApp } = Vue;
@@ -6,17 +6,23 @@ const { createApp } = Vue;
 
 const app = createApp({
 	data() {
-		const explanationTypeVal = parseInt(window.location.pathname.split("/")[2]);
+		const explanationTypeVal = parseInt(window.location.pathname.split("/")[3]);
 		const explanationType = ["none", "pred", "expl"][explanationTypeVal-1];
+
+		const userGroup = parseInt(window.location.pathname.split("/")[2]);
+		const tweetGroup = getTweetGroupOrder(userGroup)[explanationTypeVal-1];
+
 		return {
 			"tweets": [],
 			"explanationType": explanationType,
 			"explanationTypeVal": explanationTypeVal,
+			"userGroup": userGroup,
+			"tweetGroup": tweetGroup,
 			"timer": null,
 		}
 	},
 	created() {
-		getTweets().then((tweets) => {
+		getTweetGroup(this.tweetGroup).then((tweets) => {
 			this.tweets = tweets;
 		});
 		this.timer = Date.now();
@@ -51,7 +57,7 @@ const app = createApp({
 			}).then(response => {
 				if (response.ok) {
 					if (this.explanationTypeVal < 3) {
-						window.location.href = `/survey/${this.explanationTypeVal+1}`;
+						window.location.href = `/survey/${this.userGroup}/${this.explanationTypeVal+1}`;
 					} else {
 						window.location.href = "/survey/complete";
 					}

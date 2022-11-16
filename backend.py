@@ -23,8 +23,8 @@ def survey_intro():
 def survey_user():
 	return render_template("survey-user.html")
 
-@app.route("/survey/<int:expl_level>", methods=["GET"])
-def survey(expl_level):
+@app.route("/survey/<int:user_group>/<int:explanation_level>", methods=["GET"])
+def survey(user_group, explanation_level):
 	return render_template("survey.html")
 
 @app.route("/survey/complete")

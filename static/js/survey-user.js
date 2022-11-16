@@ -26,7 +26,7 @@ document.getElementById("next-button").addEventListener("click", function() {
 		body: JSON.stringify(user),
 	}).then(response => {
 		if (response.ok) {
-			window.location.href = "/survey/1";
+			window.location.href = `/survey/${user.group}/1`;
 		} else {
 			alert("Error saving user.");
 		}
