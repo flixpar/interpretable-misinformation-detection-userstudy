@@ -38,7 +38,6 @@ const app = createApp({
 				}
 				let surveyScore = scoreInput.value;
 				surveyResults.push({"tweetId": tweet.tweetId, "score": surveyScore});
-				console.log(tweet.tweetId, surveyScore);
 			}
 			if (surveyResults.length < this.tweets.length) {
 				alert("Please complete the survey before continuing.");
