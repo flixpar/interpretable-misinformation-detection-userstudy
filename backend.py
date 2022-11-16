@@ -13,24 +13,26 @@ def index():
 def tweets():
 	return send_file("data/sample_tweets.json")
 
-@app.route("/survey", methods=["GET", "POST"])
-def survey():
-	if request.method == "GET":
-		return render_template("survey.html")
-	else:
-		request_data = request.get_json()
+@app.route("/survey/<int:expl_level>", methods=["GET"])
+def survey(expl_level):
+	return render_template("survey.html")
 
-		user_id = session.get("user_id", -1)
-		explanation_level = request_data["explanationType"]
 
-		for response in request_data["surveyResults"]:
-			tweet_id = response["tweetId"]
-			score = response["score"]
-			tweet_response = TweetResponse(tweet_id=tweet_id, user_id=user_id, response=score, explanation_level=explanation_level)
-			db_session.add(tweet_response)
+@app.route("/survey", methods=["POST"])
+def handle_survey():
+	request_data = request.get_json()
 
-		db_session.commit()
-		return jsonify(success=True)
+	user_id = session.get("user_id", -1)
+	explanation_level = request_data["explanationType"]
+
+	for response in request_data["surveyResults"]:
+		tweet_id = response["tweetId"]
+		score = response["score"]
+		tweet_response = TweetResponse(tweet_id=tweet_id, user_id=user_id, response=score, explanation_level=explanation_level)
+		db_session.add(tweet_response)
+
+	db_session.commit()
+	return jsonify(success=True)
 
 @app.route("/responses")
 def responses():
