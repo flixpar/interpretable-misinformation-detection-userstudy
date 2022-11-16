@@ -54,7 +54,7 @@ def handle_survey():
 @app.route("/survey/user", methods=["POST"])
 def handle_user():
 	request_data = request.get_json()
-	user = User(email=request_data["email"], name=request_data["name"], age=request_data["age"])
+	user = User(email=request_data["email"], name=request_data["name"], age=request_data["age"], group=request_data["group"])
 	db_session.add(user)
 	db_session.commit()
 	session["user_id"] = user.id
