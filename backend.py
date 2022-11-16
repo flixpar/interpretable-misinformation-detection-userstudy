@@ -105,6 +105,7 @@ def feedback():
 def reset_db():
 	db_session.query(TweetResponse).delete()
 	db_session.query(User).delete()
+	db_session.query(UserFeedback).delete()
 	db_session.commit()
 	return jsonify(success=True)
 
