@@ -21,21 +21,6 @@
 		</div>
 
 		<div id="content" class="mb-8">
-			<div id="model-selection" class="w-1/2 mx-auto mb-4">
-				<p>Display:</p>
-				<div>
-					<input type="radio" id="none" name="model-select" value="none" v-model="explanationType">
-					<label class="ml-1" for="none">None</label>
-				</div>
-				<div>
-					<input type="radio" id="pred" name="model-select" value="pred" v-model="explanationType">
-					<label class="ml-1" for="pred">Prediction Only</label>
-				</div>
-				<div>
-					<input type="radio" id="expl" name="model-select" value="expl" v-model="explanationType">
-					<label class="ml-1" for="expl">Prediction + Explanation</label>
-				</div>
-			</div>
 			<div id="feed" class="w-1/2 mx-auto border-x border-t">
 				<explained-tweet v-for="tweet in tweets" v-bind="tweet" :explanation-type="explanationType"></explained-tweet>
 			</div>
