@@ -70,7 +70,7 @@ def format_tweet(tweet_id):
 		"misinformationScore": explanation_data[tweet_id]["misinformationScore"],
 		"explanation": explanation_data[tweet_id]["explanation"],
 		"real": tweet_ann["real"],
-		"surveyGroup": random.randint(1, 3),
+		"tweetGroup": (tweet_ids.index(tweet_id) % 3) + 1,
 	}
 	return output
 

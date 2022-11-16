@@ -21,7 +21,7 @@
 			"userScore": 0.8
 		},
 		"real": true,
-		"surveyGroup": 1
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1590003755898097668",
@@ -45,7 +45,7 @@
 			"userScore": 0.9
 		},
 		"real": true,
-		"surveyGroup": 2
+		"tweetGroup": 2
 	},
 	{
 		"tweetId": "1589659716246175746",
@@ -69,7 +69,7 @@
 			"userScore": 0.1
 		},
 		"real": true,
-		"surveyGroup": 3
+		"tweetGroup": 3
 	},
 	{
 		"tweetId": "1586410852646674432",
@@ -93,7 +93,7 @@
 			"userScore": -0.8
 		},
 		"real": true,
-		"surveyGroup": 3
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1592538171157499908",
@@ -117,7 +117,7 @@
 			"userScore": 0.1
 		},
 		"real": false,
-		"surveyGroup": 1
+		"tweetGroup": 2
 	},
 	{
 		"tweetId": "1592231650322255876",
@@ -141,7 +141,7 @@
 			"userScore": 0.8
 		},
 		"real": true,
-		"surveyGroup": 3
+		"tweetGroup": 3
 	},
 	{
 		"tweetId": "1592597884154908675",
@@ -165,7 +165,7 @@
 			"userScore": 0.9
 		},
 		"real": false,
-		"surveyGroup": 3
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1592500544404324353",
@@ -189,7 +189,7 @@
 			"userScore": 0.7
 		},
 		"real": true,
-		"surveyGroup": 2
+		"tweetGroup": 2
 	},
 	{
 		"tweetId": "1344763622371823622",
@@ -213,7 +213,7 @@
 			"userScore": 0.1
 		},
 		"real": true,
-		"surveyGroup": 2
+		"tweetGroup": 3
 	},
 	{
 		"tweetId": "1592632698832834561",
@@ -237,7 +237,7 @@
 			"userScore": -0.9
 		},
 		"real": false,
-		"surveyGroup": 2
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1592630356959989761",
@@ -261,7 +261,7 @@
 			"userScore": -0.5
 		},
 		"real": false,
-		"surveyGroup": 2
+		"tweetGroup": 2
 	},
 	{
 		"tweetId": "1590042449627742208",
@@ -285,7 +285,7 @@
 			"userScore": -0.5
 		},
 		"real": true,
-		"surveyGroup": 1
+		"tweetGroup": 3
 	},
 	{
 		"tweetId": "1582425681316941825",
@@ -309,7 +309,7 @@
 			"userScore": -0.9
 		},
 		"real": true,
-		"surveyGroup": 1
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1591168726937833473",
@@ -333,7 +333,7 @@
 			"userScore": -0.1
 		},
 		"real": false,
-		"surveyGroup": 3
+		"tweetGroup": 2
 	},
 	{
 		"tweetId": "1592571413030113282",
@@ -357,7 +357,7 @@
 			"userScore": 0.1
 		},
 		"real": false,
-		"surveyGroup": 1
+		"tweetGroup": 3
 	},
 	{
 		"tweetId": "1592606698237485056",
@@ -381,7 +381,7 @@
 			"userScore": -0.2
 		},
 		"real": false,
-		"surveyGroup": 1
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1587625558124404737",
@@ -405,7 +405,7 @@
 			"userScore": -0.3
 		},
 		"real": true,
-		"surveyGroup": 1
+		"tweetGroup": 2
 	},
 	{
 		"tweetId": "1532382197855952896",
@@ -429,7 +429,7 @@
 			"userScore": -0.7
 		},
 		"real": true,
-		"surveyGroup": 2
+		"tweetGroup": 3
 	},
 	{
 		"tweetId": "1580104625411489792",
@@ -453,7 +453,7 @@
 			"userScore": 1.0
 		},
 		"real": true,
-		"surveyGroup": 2
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1592279349939802114",
@@ -477,7 +477,7 @@
 			"userScore": -0.2
 		},
 		"real": false,
-		"surveyGroup": 1
+		"tweetGroup": 2
 	},
 	{
 		"tweetId": "1523408788832747522",
@@ -501,7 +501,7 @@
 			"userScore": -0.3
 		},
 		"real": true,
-		"surveyGroup": 3
+		"tweetGroup": 3
 	},
 	{
 		"tweetId": "1592253569083838467",
@@ -525,7 +525,7 @@
 			"userScore": 0.2
 		},
 		"real": false,
-		"surveyGroup": 2
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1586750930028199941",
@@ -549,7 +549,7 @@
 			"userScore": -0.6
 		},
 		"real": false,
-		"surveyGroup": 3
+		"tweetGroup": 2
 	},
 	{
 		"tweetId": "1591696568998141953",
@@ -573,7 +573,7 @@
 			"userScore": 0.7
 		},
 		"real": false,
-		"surveyGroup": 3
+		"tweetGroup": 3
 	},
 	{
 		"tweetId": "1582743740879630336",
@@ -597,7 +597,7 @@
 			"userScore": 0.5
 		},
 		"real": true,
-		"surveyGroup": 1
+		"tweetGroup": 1
 	},
 	{
 		"tweetId": "1592174853418795012",
@@ -621,6 +621,6 @@
 			"userScore": -0.5
 		},
 		"real": true,
-		"surveyGroup": 2
+		"tweetGroup": 2
 	}
 ]
