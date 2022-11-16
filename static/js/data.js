@@ -1,4 +1,4 @@
-export { getAllTweets, getTweetGroup, getTweetGroupOrder };
+export { getAllTweets, getTweetGroup, getExampleTweets, getTweetGroupOrder };
 
 
 function getAllTweets() {
@@ -12,6 +12,11 @@ function getTweetGroup(tweetGroupNum) {
 		.then(response => response.json())
 		.then(tweets => tweets.filter(tweet => tweet.tweetGroup === tweetGroupNum))
 		.then(tweets => tweets.sort((a, b) => (a.tweetId < b.tweetId) ? 1 : -1));
+}
+
+function getExampleTweets() {
+	return fetch("/tweets/examples")
+		.then(response => response.json());
 }
 
 function getTweetGroupOrder(userGroup) {

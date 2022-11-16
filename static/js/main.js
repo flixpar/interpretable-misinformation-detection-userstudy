@@ -1,4 +1,4 @@
-import { getAllTweets } from "./data.js";
+import { getExampleTweets } from "./data.js";
 import { Tweet, ExplainedTweet } from "./ui.js";
 
 const { createApp } = Vue;
@@ -12,7 +12,7 @@ const app = createApp({
 		}
 	},
 	created() {
-		getAllTweets().then((tweets) => {
+		getExampleTweets().then((tweets) => {
 			this.tweets = tweets;
 		});
 	}
