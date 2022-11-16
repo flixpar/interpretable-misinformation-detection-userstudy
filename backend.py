@@ -1,7 +1,7 @@
 from flask import Flask, render_template, send_file, request, session, jsonify
 import os
 
-from surveydb import db_session, User, TweetResponse
+from surveydb import db_session, User, TweetResponse, UserFeedback
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
@@ -26,6 +26,10 @@ def survey_user():
 @app.route("/survey/<int:user_group>/<int:explanation_level>", methods=["GET"])
 def survey(user_group, explanation_level):
 	return render_template("survey.html")
+
+@app.route("/survey/feedback")
+def survey_feedback():
+	return render_template("survey-feedback.html")
 
 @app.route("/survey/complete")
 def survey_complete():
@@ -56,6 +60,28 @@ def handle_user():
 	session["user_id"] = user.id
 	return jsonify(success=True)
 
+@app.route("/survey/feedback", methods=["POST"])
+def handle_feedback():
+	request_data = request.get_json()
+	user_id = session.get("user_id", -1)
+
+	feedback = UserFeedback(
+		user_id=user_id,
+		difficultyUnassisted=request_data["difficulty-noassistance"],
+		difficultyAssisted=request_data["difficulty-assisted"],
+		predictionUsefulness=request_data["useful-preds"],
+		explanationUsefulness=request_data["useful-expl"],
+		agreementFrequency=request_data["agree-freq"],
+		comments=request_data["comments"],
+	)
+	db_session.add(feedback)
+
+	user = User.query.filter_by(id=user_id).first()
+	user.complete()
+
+	db_session.commit()
+	return jsonify(success=True)
+
 @app.route("/responses")
 def responses():
 	responses = db_session.query(TweetResponse).all()
@@ -65,6 +91,11 @@ def responses():
 def users():
 	users = db_session.query(User).all()
 	return jsonify([u.serialize for u in users])
+
+@app.route("/feedback")
+def feedback():
+	feedback = db_session.query(UserFeedback).all()
+	return jsonify([f.serialize for f in feedback])
 
 @app.route("/reset-db")
 def reset_db():

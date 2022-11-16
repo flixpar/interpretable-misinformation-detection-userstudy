@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Interpretable Misinformation Detection</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script defer data-domain="iml.felixparker.com" src="https://plausible.io/js/script.js"></script>
+	</head>
+	<body>
+		<div id="header" class="w-1/2 mx-auto mt-4 mb-8">
+			<h1 class="text-2xl">Interpretable Misinformation Detection</h1>
+		</div>
+
+		<div id="content" class="mb-8 w-1/2 mx-auto">
+			<p class="mb-8 text-lg">Please provide some feedback on your experience.</p>
+			<div id="form-area">
+				<div class="mb-6">
+					<p>How difficult was detecting misinformation without assistance?</p>
+					<div class="radio-button-group flex flex-row justify-evenly mt-4">
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-noassistance" id="difficulty-noassistance-1" value="1">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-noassistance-1">Very Easy</label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-noassistance" id="difficulty-noassistance-2" value="2">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-noassistance-2"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-noassistance" id="difficulty-noassistance-3" value="3">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-noassistance-3"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-noassistance" id="difficulty-noassistance-4" value="4">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-noassistance-4"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-noassistance" id="difficulty-noassistance-5" value="5">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-noassistance-5">Very Difficult</label>
+						</div>
+					</div>
+				</div>
+				<div class="mb-6">
+					<p>How difficult was detecting misinformation with assistance?</p>
+					<div class="radio-button-group flex flex-row justify-evenly mt-4">
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-assisted" id="difficulty-assisted-1" value="1">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-assisted-1">Very Easy</label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-assisted" id="difficulty-assisted-2" value="2">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-assisted-2"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-assisted" id="difficulty-assisted-3" value="3">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-assisted-3"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-assisted" id="difficulty-assisted-4" value="4">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-assisted-4"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="difficulty-assisted" id="difficulty-assisted-5" value="5">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="difficulty-assisted-5">Very Difficult</label>
+						</div>
+					</div>
+				</div>
+				<div class="mb-6">
+					<p>How useful were the predictions?</p>
+					<div class="radio-button-group flex flex-row justify-evenly mt-4">
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-preds" id="useful-preds-1" value="1">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-preds-1">Not Useful</label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-preds" id="useful-preds-2" value="2">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-preds-2"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-preds" id="useful-preds-3" value="3">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-preds-3">Somewhat Useful</label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-preds" id="useful-preds-4" value="4">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-preds-4"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-preds" id="useful-preds-5" value="5">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-preds-5">Very Useful</label>
+						</div>
+					</div>
+				</div>
+				<div class="mb-6">
+					<p>How useful were the score breakdowns?</p>
+					<div class="radio-button-group flex flex-row justify-evenly mt-4">
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-expl" id="useful-expl-1" value="1">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-expl-1">Not Useful</label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-expl" id="useful-expl-2" value="2">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-expl-2"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-expl" id="useful-expl-3" value="3">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-expl-3">Somewhat Useful</label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-expl" id="useful-expl-4" value="4">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-expl-4"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="useful-expl" id="useful-expl-5" value="5">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="useful-expl-5">Very Useful</label>
+						</div>
+					</div>
+				</div>
+				<div class="mb-6">
+					<p>How often did you agree with the predictions?</p>
+					<div class="radio-button-group flex flex-row justify-evenly mt-4">
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="agree-freq" id="agree-freq-1" value="1">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="agree-freq-1">Never</label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="agree-freq" id="agree-freq-2" value="2">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="agree-freq-2"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="agree-freq" id="agree-freq-3" value="3">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="agree-freq-3">Sometimes</label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="agree-freq" id="agree-freq-4" value="4">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="agree-freq-4"></label>
+						</div>
+						<div class="radio-button flex flex-col items-center">
+							<input type="radio" name="agree-freq" id="agree-freq-5" value="5">
+							<label class="radio-label text-xs text-gray-600 mt-1" for="agree-freq-5">Always</label>
+						</div>
+					</div>
+				</div>
+				<div class="mb-6">
+					<label for="comments">If you have any other feedback, please enter it below:</label>
+					<textarea id="comments" class="w-full h-32 border-2 rounded-md resize-y p-2 text-sm" placeholder="Feedback..."></textarea>
+				</div>
+				<div>
+					<button id="next-button" type="button" class="submit-button mt-6 mx-auto block bg-sky-500 hover:bg-sky-700 px-5 py-2 text-sm leading-5 rounded-lg font-semibold text-white">Done!</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="/static/js/survey-feedback.js"></script>
+	</body>
+</html>

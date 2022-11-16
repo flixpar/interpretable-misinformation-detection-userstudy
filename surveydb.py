@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey
 import datetime
 
 
@@ -18,12 +18,17 @@ class User(Base):
 	age = Column(Integer)
 	group = Column(Integer)
 	created = Column(DateTime, default=datetime.datetime.now)
+	start_time = Column(DateTime, default=datetime.datetime.now)
+	end_time = Column(DateTime)
 
 	def __init__(self, email=None, name=None, age=None, group=None):
 		self.email = email
 		self.name = name
 		self.age = age
 		self.group = group
+
+	def complete(self):
+		self.end_time = datetime.datetime.now()
 
 	def __repr__(self):
 		return f"User: {self.name}"
@@ -65,6 +70,44 @@ class TweetResponse(Base):
 			"user_id": self.user_id,
 			"response": self.response,
 			"explanation_level": self.explanation_level,
+			"created": self.created
+		}
+
+class UserFeedback(Base):
+	__tablename__ = "feedback"
+	id = Column(Integer, primary_key=True)
+	user_id = Column(Integer, ForeignKey("users.id"))
+	user = relationship("User", backref="feedback")
+	difficultyUnassisted = Column(Integer)
+	difficultyAssisted = Column(Integer)
+	predictionUsefulness = Column(Integer)
+	explanationUsefulness = Column(Integer)
+	agreementFrequency = Column(Integer)
+	comments = Column(Text)
+	created = Column(DateTime, default=datetime.datetime.now)
+
+	def __init__(self, user_id=None, difficultyUnassisted=None, difficultyAssisted=None, predictionUsefulness=None, explanationUsefulness=None, agreementFrequency=None, comments=None):
+		self.user_id = user_id
+		self.difficultyUnassisted = difficultyUnassisted
+		self.difficultyAssisted = difficultyAssisted
+		self.predictionUsefulness = predictionUsefulness
+		self.explanationUsefulness = explanationUsefulness
+		self.agreementFrequency = agreementFrequency
+		self.comments = comments
+
+	def __repr__(self):
+		return f"{self.user_id}: {self.explanationUsefulness}"
+
+	@property
+	def serialize(self):
+		return {
+			"user_id": self.user_id,
+			"difficultyUnassisted": self.difficultyUnassisted,
+			"difficultyAssisted": self.difficultyAssisted,
+			"predictionUsefulness": self.predictionUsefulness,
+			"explanationUsefulness": self.explanationUsefulness,
+			"agreementFrequency": self.agreementFrequency,
+			"comments": self.comments,
 			"created": self.created
 		}
 

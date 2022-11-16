@@ -55,7 +55,7 @@ const app = createApp({
 					if (this.explanationTypeVal < 3) {
 						window.location.href = `/survey/${this.userGroup}/${this.explanationTypeVal+1}`;
 					} else {
-						window.location.href = "/survey/complete";
+						window.location.href = "/survey/feedback";
 					}
 				} else {
 					alert("Error submitting survey results.");
