@@ -22,7 +22,7 @@ const ScoreBar = {
 		let barWidth = 0, margin = 0;
 		if (this.score >= 0) {
 			barWidth = this.score * 50;
-			margin = 50;
+			margin = 0;
 		} else {
 			barWidth = -this.score * 50;
 			margin = 50 - barWidth;
@@ -35,13 +35,14 @@ const ScoreBar = {
 	},
 	template: `
 	<div class="explanation-score-bar mt-1" v-if="score!=null">
-		<div class="flex flex-row justify-between">
+		<div class="flex flex-row justify-between items-center">
 			<h4 class="font-semibold leading-4">{{ scoreName }}</h4>
 			<p class="text-xs leading-4">{{ (score*100).toFixed(0) }}%</p>
 		</div>
-		<div class="score-bar-outer w-full border border-slate-300">
+		<div class="score-bar-outer w-full border border-slate-300 flex flex-row">
+			<span v-if="score>=0" class="score-bar-divider -mt-2 -mb-2 self-center w-0.5 h-4 bg-black" style="margin-left: 50%;"></span>
 			<div class="score-bar-inner h-2" :style="{backgroundColor: this.color, width: this.barWidth, marginLeft: this.margin}"></div>
-			<span class="score-bar-divider absolute left-1/2 -mt-3 w-0.5 h-4 bg-black"></span>
+			<span v-if="score<0" class="score-bar-divider -mt-2 -mb-2 self-center w-0.5 h-4 bg-black"></span>
 		</div>
 	</div>
 	`,
@@ -72,7 +73,7 @@ const ExplanationDisplay = {
 		<div class="misinforamtion-score-bar h-full" v-if="showScore">
 			<div class="misinformation-score-bar-inner h-full w-1" :style="{backgroundColor: colorscaleSimple(misinformationScore)}"></div>
 		</div>
-		<div class="explanation absolute bg-slate-50 p-4 rounded text-sm w-72 ml-1" v-if="showExplanation" v-show="hover">
+		<div class="explanation md:absolute bg-slate-50 p-4 rounded text-sm md:w-72 ml-1" v-if="showExplanation" v-show="hover">
 			<div class="explanation-header border-b border-slate-300">
 				<h3 class="font-semibold">Explanation</h3>
 			</div>
