@@ -6,9 +6,12 @@ const { createApp } = Vue;
 
 const app = createApp({
 	data() {
+		const explanationTypeVal = parseInt(window.location.pathname.split("/")[2]);
+		const explanationType = ["none", "pred", "expl"][explanationTypeVal-1];
 		return {
 			"tweets": [],
-			"explanationType": "expl",
+			"explanationType": explanationType,
+			"explanationTypeVal": explanationTypeVal,
 			"timer": null,
 		}
 	},
@@ -20,9 +23,6 @@ const app = createApp({
 	},
 	methods: {
 		next: function() {
-			this.submit();
-		},
-		submit: function() {
 			let surveyResults = [];
 			for (const tweet of this.tweets) {
 				let scoreInputName = "survey-score-" + tweet.tweetId;
@@ -50,7 +50,11 @@ const app = createApp({
 				}),
 			}).then(response => {
 				if (response.ok) {
-					this.timer = Date.now();
+					if (this.explanationTypeVal < 3) {
+						window.location.href = `/survey/${this.explanationTypeVal+1}`;
+					} else {
+						window.location.href = "/survey/complete";
+					}
 				} else {
 					alert("Error submitting survey results.");
 				}
