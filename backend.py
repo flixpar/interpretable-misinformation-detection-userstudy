@@ -1,8 +1,10 @@
 from flask import Flask, render_template, send_file, request, session, jsonify
+import os
 
 from surveydb import db_session, User, TweetResponse
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 
 
 @app.route("/")
@@ -12,6 +14,10 @@ def index():
 @app.route("/tweets")
 def tweets():
 	return send_file("data/sample_tweets.json")
+
+@app.route("/survey/user", methods=["GET"])
+def survey_user():
+	return render_template("survey-user.html")
 
 @app.route("/survey/<int:expl_level>", methods=["GET"])
 def survey(expl_level):
@@ -37,10 +43,24 @@ def handle_survey():
 	db_session.commit()
 	return jsonify(success=True)
 
+@app.route("/survey/user", methods=["POST"])
+def handle_user():
+	request_data = request.get_json()
+	user = User(email=request_data["email"], name=request_data["name"], age=request_data["age"])
+	db_session.add(user)
+	db_session.commit()
+	session["user_id"] = user.id
+	return jsonify(success=True)
+
 @app.route("/responses")
 def responses():
 	responses = db_session.query(TweetResponse).all()
 	return jsonify([r.serialize for r in responses])
+
+@app.route("/users")
+def users():
+	users = db_session.query(User).all()
+	return jsonify([u.serialize for u in users])
 
 @app.route("/reset-db")
 def reset_db():

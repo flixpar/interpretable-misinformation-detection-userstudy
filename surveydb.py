@@ -14,13 +14,27 @@ class User(Base):
 	__tablename__ = "users"
 	id = Column(Integer, primary_key=True)
 	email = Column(String(120), unique=True)
+	name = Column(String(120))
+	age = Column(Integer)
 	created = Column(DateTime, default=datetime.datetime.now)
 
-	def __init__(self, email=None):
+	def __init__(self, email=None, name=None, age=None):
 		self.email = email
+		self.name = name
+		self.age = age
 
 	def __repr__(self):
-		return f"User: {self.email}"
+		return f"User: {self.name}"
+
+	@property
+	def serialize(self):
+		return {
+			"id": self.id,
+			"email": self.email,
+			"name": self.name,
+			"age": self.age,
+			"created": self.created
+		}
 
 class TweetResponse(Base):
 	__tablename__ = "responses"
