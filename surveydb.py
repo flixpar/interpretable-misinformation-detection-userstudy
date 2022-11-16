@@ -16,16 +16,17 @@ class User(Base):
 	email = Column(String(120), unique=True)
 	name = Column(String(120))
 	age = Column(Integer)
+	social_media_use = Column(Integer)
 	group = Column(Integer)
-	created = Column(DateTime, default=datetime.datetime.now)
 	start_time = Column(DateTime, default=datetime.datetime.now)
 	end_time = Column(DateTime)
 
-	def __init__(self, email=None, name=None, age=None, group=None):
+	def __init__(self, email=None, name=None, age=None, group=None, social_media_use=None):
 		self.email = email
 		self.name = name
 		self.age = age
 		self.group = group
+		self.social_media_use = social_media_use
 
 	def complete(self):
 		self.end_time = datetime.datetime.now()
@@ -40,8 +41,10 @@ class User(Base):
 			"email": self.email,
 			"name": self.name,
 			"age": self.age,
-			"created": self.created,
 			"group": self.group,
+			"social_media_use": self.social_media_use,
+			"start_time": self.start_time,
+			"end_time": self.end_time,
 		}
 
 class TweetResponse(Base):

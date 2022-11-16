@@ -8,14 +8,22 @@ document.getElementById("next-button").addEventListener("click", function() {
 	const userAge = document.getElementById("form-age").value;
 
 	if (userName === "" || userEmail === "" || userAge === "") {
-		alert("Please fill out all fields.");
+		alert("Please fill out all the questions before continuing.");
 		return;
 	}
+
+	let socialMediaUseElem = document.querySelector(`input[name="form-social-media"]:checked`);
+	if (socialMediaUseElem == null) {
+		alert("Please fill out all the questions before continuing.");
+		return;
+	}
+	let socialMediaUse = parseInt(socialMediaUseElem.value);
 
 	const user = {
 		name: userName,
 		email: userEmail,
 		age: userAge,
+		socialMediaUse: socialMediaUse,
 		group: randomGroup(),
 	};
 	fetch("/survey/user", {
