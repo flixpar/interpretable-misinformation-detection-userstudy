@@ -16,12 +16,14 @@ class User(Base):
 	email = Column(String(120), unique=True)
 	name = Column(String(120))
 	age = Column(Integer)
+	group = Column(Integer)
 	created = Column(DateTime, default=datetime.datetime.now)
 
-	def __init__(self, email=None, name=None, age=None):
+	def __init__(self, email=None, name=None, age=None, group=None):
 		self.email = email
 		self.name = name
 		self.age = age
+		self.group = group
 
 	def __repr__(self):
 		return f"User: {self.name}"
@@ -33,7 +35,8 @@ class User(Base):
 			"email": self.email,
 			"name": self.name,
 			"age": self.age,
-			"created": self.created
+			"created": self.created,
+			"group": self.group,
 		}
 
 class TweetResponse(Base):

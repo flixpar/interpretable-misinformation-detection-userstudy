@@ -1,3 +1,7 @@
+function randomGroup() {
+	return Math.floor(Math.random() * 6) + 1;
+}
+
 document.getElementById("next-button").addEventListener("click", function() {
 	const userName = document.getElementById("form-name").value;
 	const userEmail = document.getElementById("form-email").value;
@@ -11,7 +15,8 @@ document.getElementById("next-button").addEventListener("click", function() {
 	const user = {
 		name: userName,
 		email: userEmail,
-		age: userAge
+		age: userAge,
+		group: randomGroup(),
 	};
 	fetch("/survey/user", {
 		method: "POST",
