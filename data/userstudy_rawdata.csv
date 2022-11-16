@@ -1,0 +1,27 @@
+tweet_id,real,text,true_classification,overall_score,text_score,link_score,user_score
+1590054649012178944,TRUE,,TRUE,0.35,-0.1,na,0.8
+1590003755898097668,TRUE,,TRUE,0.4333333333,-0.5,0.9,0.9
+1589659716246175746,TRUE,,TRUE,0,-0.1,na,0.1
+1586410852646674432,TRUE,,TRUE,0.05,0.9,na,-0.8
+1592538171157499908,FALSE,White teacher was fired after telling his class that he is ethnocentric at heart and believes his own race is superior. https://www.cnn.com/2022/11/15/us/texas-teacher-fired-race-conversation/index.html,TRUE,0.06666666667,-0.6,0.7,0.1
+1592231650322255876,TRUE,,TRUE,0.6666666667,0.3,0.9,0.8
+1592597884154908675,FALSE,"The world population is projected to hit 8 billion people today, and much of this growth is coming from developing nations in Africa.  https://apnews.com/article/world-population-8-billion-acc94296d8aeb06e64daff9e597e0214",TRUE,0.6666666667,0.2,0.9,0.9
+1592500544404324353,TRUE,,TRUE,0.7333333333,0.8,0.7,0.7
+1344763622371823622,TRUE,,FALSE,-0.5,-0.9,-0.7,0.1
+1592632698832834561,FALSE,"Recent numbers show that fertility rates are dropping across the globe, and there are a variety of factors behind this. These declining fertility rates can have alarming consequences, according to AAPS: https://aapsonline.org/aaps-news-june-2022-depopulation/",FALSE,-0.5,0.3,-0.9,-0.9
+1592630356959989761,FALSE,"Al Gore is investing heavily in meat substitutes, and it could make him a billionaire! https://www.cfact.org/2019/08/21/will-al-gore-be-the-first-fake-meat-billionaire/",FALSE,-0.1666666667,0.8,-0.8,-0.5
+1590042449627742208,TRUE,,FALSE,-0.5,-0.5,na,-0.5
+1582425681316941825,TRUE,,FALSE,-0.55,-0.2,na,-0.9
+1591168726937833473,FALSE,"The US now prevents border agents from using deadly force, but is training IRS agents to use SWAT tactics. Source: https://www.instagram.com/p/Chi4JJBN1sd/?utm_source=ig_embed&ig_rid=970a5bd1-3087-4fac-bb86-7ec2f67027c7",FALSE,0,0.8,-0.7,-0.1
+1592571413030113282,FALSE,Bank of America announced a new mortgage home loan program for first-time homebuyers. But only blacks and Hispanics will be eligible. Source: https://www.thegatewaypundit.com/2022/08/bank-america-offer-zero-payment-zero-closing-cost-mortgage-loans-black-hispanic-borrowers/?utm_source=rss&utm_medium=rss&utm_campaign=bank-of-america-to-offer-zero-down-payment-zero-closing-cost-mortgage-loans-to-black-and-hispanic-borrowers,FALSE,-0.06666666667,0.6,-0.9,0.1
+1592606698237485056,FALSE,"Mandela Barnes is the Democrat candidate for Wisconsin’s U.S. Senate seat, and he supports stripping health care away from millions. This was revealed in a statement by NRSC spokeswoman Lizzie Litzow. https://www.nrsc.org/press-releases/badger-state-under-the-barnes-brigade-part-viii-medicare-for-all-2022-08-24/",FALSE,-0.3,0.2,-0.9,-0.2
+1587625558124404737,TRUE,,FALSE,0.2,0.7,na,-0.3
+1532382197855952896,TRUE,,FALSE,-0.55,-0.4,na,-0.7
+1580104625411489792,TRUE,,TRUE,0.6666666667,0.3,0.7,1
+1592279349939802114,FALSE,"A recent study found that mindfulness and meditation can be as effective as Lexapro, a drug used to treat depression and anxiety. Source: https://www.npr.org/sections/health-shots/2022/11/09/1135211525/anxiety-medication-meditation-lexapro",TRUE,0.3,0.2,0.9,-0.2
+1523408788832747522,TRUE,,FALSE,-0.4,-0.5,na,-0.3
+1592253569083838467,FALSE,"FRIENDS. LATIF AND I ARE ABOUT TO INTERVIEW THE SCIENTIST WHO SHOWED THAT EVOLUTION KEEPS MAKING CRABS. From separate, unrelated species, the crab shape KEEPS evolving, almost like an ideal form. Evolution wants a crab. Got any Qs? Big or Small?",TRUE,-0.5,-0.8,na,0.2
+1586750930028199941,FALSE,"Join me for the free 3-Day Medical Medium Wild Blueberry Challenge from November 15th-17th! This Challenge is devoted to celebrating and enjoying wild blueberries, which not only taste delicious, but are also my number one favorite healing food. When it comes to wild blueberries, we are talking about extremely high amounts of antioxidants, and antioxidants are a critical component of our health and wellbeing. I talk all about the healing properties of wild blueberries in Medical Medium Brain Saver: Answers to Brain Inflammation, Mental Health, Brain Fog, and Autoimmune & Eating Disorders.",FALSE,0.2,0.8,na,-0.6
+1591696568998141953,FALSE,New psychology research suggests your favorite songs reveal your attachment style https://medicalxpress.com/news/2022-11-psychology-favorite-songs-reveal-style.html,TRUE,0.8,0.8,-0.3,0.7
+1582743740879630336,TRUE,,TRUE,0.4,0.3,na,0.5
+1592174853418795012,TRUE,,TRUE,-0.5,0,na,-0.5

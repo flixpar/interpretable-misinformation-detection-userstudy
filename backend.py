@@ -13,7 +13,7 @@ def index():
 
 @app.route("/tweets")
 def tweets():
-	return send_file("data/sample_tweets.json")
+	return send_file("data/userstudy_tweets.json")
 
 @app.route("/survey/intro")
 def survey_intro():

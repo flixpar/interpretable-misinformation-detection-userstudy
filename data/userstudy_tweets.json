@@ -1,0 +1,626 @@
+[
+	{
+		"tweetId": "1590054649012178944",
+		"user": {
+			"userId": "1437478379511500801",
+			"name": "The Baltimore Banner",
+			"username": "BaltimoreBanner",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1491109942379659268/J-qlQE9W_normal.png"
+		},
+		"content": "Baltimore City Elections Director Armstead Jones has been hospitalized. \n\nDeputy Director Abigail Goldman will oversee operations at polling places across the city in his absence. <a href='https://www.thebaltimorebanner.com/politics-power/baltimore-city-elections-director-armstead-jones-hospitalized-EA7TFZFIHFCELPX2VOIPCEUR5E/?tag1=twitter&tag2=socialnewsdesk' class='tweet-link'>thebaltimorebanner.com/politics-power\u2026</a>",
+		"meta": {
+			"likes": 24,
+			"retweets": 27,
+			"replies": 3
+		},
+		"misinformationScore": 0.35,
+		"explanation": {
+			"textScore": -0.1,
+			"linkScore": null,
+			"userScore": 0.8
+		},
+		"real": true,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1590003755898097668",
+		"user": {
+			"userId": "51241574",
+			"name": "The Associated Press",
+			"username": "AP",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/461964160838803457/8z9FImcv_normal.png"
+		},
+		"content": "A pair of dogs gifted by North Korean leader Kim Jong Un in 2018 are now mired in a South Korean political row, with the country's former president blaming his conservative successor for a lack of financial support as he gave the animals up.  <a href='https://apnews.com/article/oddities-seoul-animals-south-korea-dogs-d4e66ff4f0491adb71850797fbe58451?utm_campaign=TrueAnthem&utm_medium=AP&utm_source=Twitter' class='tweet-link'>apnews.com/article/odditi\u2026</a>",
+		"meta": {
+			"likes": 28,
+			"retweets": 16,
+			"replies": 6
+		},
+		"misinformationScore": 0.4333333333,
+		"explanation": {
+			"textScore": -0.5,
+			"linkScore": 0.9,
+			"userScore": 0.9
+		},
+		"real": true,
+		"surveyGroup": 2
+	},
+	{
+		"tweetId": "1589659716246175746",
+		"user": {
+			"userId": "14959056",
+			"name": "Lisa Sy \ud83e\udd8b",
+			"username": "lisasy",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1551816869429985280/pvpvQbgY_normal.jpg"
+		},
+		"content": "There's a lot of job uncertainty right now with the recession. i grew my design career through the last decade after the recovery from the 2008 downturn.\n\nHere is advice I give to current college students/soon grads who may be graduating into the recession:",
+		"meta": {
+			"likes": 47,
+			"retweets": 2,
+			"replies": 3
+		},
+		"misinformationScore": 0.0,
+		"explanation": {
+			"textScore": -0.1,
+			"linkScore": null,
+			"userScore": 0.1
+		},
+		"real": true,
+		"surveyGroup": 3
+	},
+	{
+		"tweetId": "1586410852646674432",
+		"user": {
+			"userId": "44196397",
+			"name": "Elon Musk",
+			"username": "elonmusk",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1590968738358079488/IY9Gx6Ok_normal.jpg"
+		},
+		"content": "Fresh baked bread &amp; pastries are some of the great joys of life",
+		"meta": {
+			"likes": 532540,
+			"retweets": 33687,
+			"replies": 30369
+		},
+		"misinformationScore": 0.05,
+		"explanation": {
+			"textScore": 0.9,
+			"linkScore": null,
+			"userScore": -0.8
+		},
+		"real": true,
+		"surveyGroup": 3
+	},
+	{
+		"tweetId": "1592538171157499908",
+		"user": {
+			"userId": "3041509295",
+			"name": "bug girl",
+			"username": "buggirl",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1503852266205372428/JXKsuppu_normal.jpg"
+		},
+		"content": "White teacher was fired after telling his class that he is ethnocentric at heart and believes his own race is superior. <a href='https://www.cnn.com/2022/11/15/us/texas-teacher-fired-race-conversation/index.html' class='tweet-link'>www.cnn.com/2022/11/15/us...</a>",
+		"meta": {
+			"likes": 181190,
+			"retweets": 18248,
+			"replies": 513
+		},
+		"misinformationScore": 0.06666666667,
+		"explanation": {
+			"textScore": -0.6,
+			"linkScore": 0.7,
+			"userScore": 0.1
+		},
+		"real": false,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1592231650322255876",
+		"user": {
+			"userId": "22642788",
+			"name": "Pew Research Center",
+			"username": "pewresearch",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/879728447026868228/U4Uzpdp6_normal.jpg"
+		},
+		"content": "76% of Americans say, when following science news, they\u2019ve felt frustrated that there is so much political disagreement in this area. Notably, this sense of frustration is shared by identical shares of Republicans and Democrats (78% each). <a href='https://pewrsr.ch/3tkThou' class='tweet-link'>pewrsr.ch/3tkThou</a> <a href='https://twitter.com/pewresearch/status/1592231650322255876/photo/1' class='tweet-link'>pic.twitter.com/hvlSUAv5PM</a>",
+		"meta": {
+			"likes": 17,
+			"retweets": 7,
+			"replies": 0
+		},
+		"misinformationScore": 0.6666666667,
+		"explanation": {
+			"textScore": 0.3,
+			"linkScore": 0.9,
+			"userScore": 0.8
+		},
+		"real": true,
+		"surveyGroup": 3
+	},
+	{
+		"tweetId": "1592597884154908675",
+		"user": {
+			"userId": "304932002",
+			"name": "David Mack",
+			"username": "davidmackau",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1589576413811810304/u8lc6mmz_normal.jpg"
+		},
+		"content": "The world population is projected to hit 8 billion people today, and much of this growth is coming from developing nations in Africa.  <a href='https://apnews.com/article/world-population-8-billion-acc94296d8aeb06e64daff9e597e0214' class='tweet-link'>apnews.com/article/world-...</a>",
+		"meta": {
+			"likes": 72,
+			"retweets": 18,
+			"replies": 2
+		},
+		"misinformationScore": 0.6666666667,
+		"explanation": {
+			"textScore": 0.2,
+			"linkScore": 0.9,
+			"userScore": 0.9
+		},
+		"real": false,
+		"surveyGroup": 3
+	},
+	{
+		"tweetId": "1592500544404324353",
+		"user": {
+			"userId": "2467791",
+			"name": "The Washington Post",
+			"username": "washingtonpost",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1060271522319925257/fJKwJ0r2_normal.jpg"
+		},
+		"content": "Google agreed to pay $391.5 million to 40 states to settle an investigation into its location tracking practices, a coalition of state attorneys general announced Monday.\n\n<a href='https://wapo.st/3XeHTZ8' class='tweet-link'>wapo.st/3XeHTZ8</a>",
+		"meta": {
+			"likes": 96,
+			"retweets": 40,
+			"replies": 10
+		},
+		"misinformationScore": 0.7333333333,
+		"explanation": {
+			"textScore": 0.8,
+			"linkScore": 0.7,
+			"userScore": 0.7
+		},
+		"real": true,
+		"surveyGroup": 2
+	},
+	{
+		"tweetId": "1344763622371823622",
+		"user": {
+			"userId": "223344260",
+			"name": "Cindy C Edwards",
+			"username": "cindycedwards",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1191003746/DSCF0077_0083_normal.jpg"
+		},
+		"content": "Former FEMA operative Celeste Solum talks with David Icke: \u2018The Covid tests are magnetically tagging you and the vaccine is designed for mass depopulation and the synthetic transformation of the human body\u2019 <a href='https://davidicke.com/2020/11/20/former-fema-operative-celeste-solum-talks-with-david-icke-the-covid-tests-are-magnetically-tagging-you-and-the-vaccine-is-designed-for-mass-depopulation-and-the-synthetic-transformation-of-the-huma/' class='tweet-link'>davidicke.com/2020/11/20/for\u2026</a>",
+		"meta": {
+			"likes": 0,
+			"retweets": 0,
+			"replies": 0
+		},
+		"misinformationScore": -0.5,
+		"explanation": {
+			"textScore": -0.9,
+			"linkScore": -0.7,
+			"userScore": 0.1
+		},
+		"real": true,
+		"surveyGroup": 2
+	},
+	{
+		"tweetId": "1592632698832834561",
+		"user": {
+			"userId": "872870102",
+			"name": "caroline. \ud83c\udf08",
+			"username": "linemccabe63",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1520153201131012096/v6D049I5_normal.jpg"
+		},
+		"content": "Recent numbers show that fertility rates are dropping across the globe, and there are a variety of factors behind this. These declining fertility rates can have alarming consequences, according to AAPS: <a href='https://aapsonline.org/aaps-news-june-2022-depopulation/' class='tweet-link'>aapsonline.org/aaps-news-...</a>",
+		"meta": {
+			"likes": 462,
+			"retweets": 48,
+			"replies": 13
+		},
+		"misinformationScore": -0.5,
+		"explanation": {
+			"textScore": 0.3,
+			"linkScore": -0.9,
+			"userScore": -0.9
+		},
+		"real": false,
+		"surveyGroup": 2
+	},
+	{
+		"tweetId": "1592630356959989761",
+		"user": {
+			"userId": "922555852959240192",
+			"name": "\ud835\udd64\ud835\udd59\ud835\udd52\ud835\udd5f\ud835\udd56 \u303d\ufe0f",
+			"username": "shanensored",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1590923137696382976/cna2Ay2b_normal.jpg"
+		},
+		"content": "Al Gore is investing heavily in meat substitutes, and it could make him a billionaire! <a href='https://www.cfact.org/2019/08/21/will-al-gore-be-the-first-fake-meat-billionaire/' class='tweet-link'>www.cfact.org/2019/08/21/...</a>",
+		"meta": {
+			"likes": 343,
+			"retweets": 55,
+			"replies": 2
+		},
+		"misinformationScore": -0.1666666667,
+		"explanation": {
+			"textScore": 0.8,
+			"linkScore": -0.8,
+			"userScore": -0.5
+		},
+		"real": false,
+		"surveyGroup": 2
+	},
+	{
+		"tweetId": "1590042449627742208",
+		"user": {
+			"userId": "292929271",
+			"name": "Charlie Kirk",
+			"username": "charliekirk11",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1587979106653589504/pxDGCPP2_normal.jpg"
+		},
+		"content": "2 hour wait minimum at most polling places in Maricopa. Democrats running elections here knew this would happen. Traffic jam by design. DONT LET THEM DO 2020 AGAIN. \n\nWAIT IN LINE AND VOTE",
+		"meta": {
+			"likes": 20440,
+			"retweets": 6869,
+			"replies": 1413
+		},
+		"misinformationScore": -0.5,
+		"explanation": {
+			"textScore": -0.5,
+			"linkScore": null,
+			"userScore": -0.5
+		},
+		"real": true,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1582425681316941825",
+		"user": {
+			"userId": "1496482009446850572",
+			"name": "Citizens to Support MI Women and Children",
+			"username": "miwomenchildren",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1568319818746535936/4vxh5V0E_normal.jpg"
+		},
+		"content": "At the beginning of the campaign, the authors of Proposal 3 admitted it ends parental consent and gives children an unlimited right to ALL matters related to pregnancy \"from birth.\"\n\n\"From birth.\" <a href='https://twitter.com/miwomenchildren/status/1582425681316941825/photo/1' class='tweet-link'>pic.twitter.com/4FvXSAFhl5</a>",
+		"meta": {
+			"likes": 6,
+			"retweets": 8,
+			"replies": 10
+		},
+		"misinformationScore": -0.55,
+		"explanation": {
+			"textScore": -0.2,
+			"linkScore": null,
+			"userScore": -0.9
+		},
+		"real": true,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1591168726937833473",
+		"user": {
+			"userId": "41622841",
+			"name": "Pamela Wood",
+			"username": "pwoodreporter",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1537560388815945729/xNKQX9bw_normal.jpg"
+		},
+		"content": "The US now prevents border agents from using deadly force, but is training IRS agents to use SWAT tactics. Source: <a href='https://www.instagram.com/p/Chi4JJBN1sd/?utm_source=ig_embed&ig_rid=970a5bd1-3087-4fac-bb86-7ec2f67027c7' class='tweet-link'>www.instagram.com/p/Chi4J...</a>",
+		"meta": {
+			"likes": 60,
+			"retweets": 11,
+			"replies": 4
+		},
+		"misinformationScore": 0.0,
+		"explanation": {
+			"textScore": 0.8,
+			"linkScore": -0.7,
+			"userScore": -0.1
+		},
+		"real": false,
+		"surveyGroup": 3
+	},
+	{
+		"tweetId": "1592571413030113282",
+		"user": {
+			"userId": "820452522494226433",
+			"name": "Dr. Tom Frieden",
+			"username": "DrTomFrieden",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1418633266094018562/xK9kYIRN_normal.jpg"
+		},
+		"content": "Bank of America announced a new mortgage home loan program for first-time homebuyers. But only blacks and Hispanics will be eligible. Source: <a href='https://www.thegatewaypundit.com/2022/08/bank-america-offer-zero-payment-zero-closing-cost-mortgage-loans-black-hispanic-borrowers/?utm_source=rss&utm_medium=rss&utm_campaign=bank-of-america-to-offer-zero-down-payment-zero-closing-cost-mortgage-loans-to-black-and-hispanic-borrowers' class='tweet-link'>www.thegatewaypundit.com/...</a>",
+		"meta": {
+			"likes": 205,
+			"retweets": 92,
+			"replies": 20
+		},
+		"misinformationScore": -0.06666666667,
+		"explanation": {
+			"textScore": 0.6,
+			"linkScore": -0.9,
+			"userScore": 0.1
+		},
+		"real": false,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1592606698237485056",
+		"user": {
+			"userId": "41259253",
+			"name": "christina applegate",
+			"username": "1capplegate",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/3509249308/2b6d40f5697c83206c89b4f9784f9a04_normal.jpeg"
+		},
+		"content": "Mandela Barnes is the Democrat candidate for Wisconsin\u2019s U.S. Senate seat, and he supports stripping health care away from millions. This was revealed in a statement by NRSC spokeswoman Lizzie Litzow. <a href='https://www.nrsc.org/press-releases/badger-state-under-the-barnes-brigade-part-viii-medicare-for-all-2022-08-24/' class='tweet-link'>www.nrsc.org/press-releas...</a>",
+		"meta": {
+			"likes": 1187,
+			"retweets": 19,
+			"replies": 22
+		},
+		"misinformationScore": -0.3,
+		"explanation": {
+			"textScore": 0.2,
+			"linkScore": -0.9,
+			"userScore": -0.2
+		},
+		"real": false,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1587625558124404737",
+		"user": {
+			"userId": "1547442737938665473",
+			"name": "W",
+			"username": "JeanLucPicard84",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1551461891498803200/lW2yf5yQ_normal.jpg"
+		},
+		"content": "#WorldSeries2022 @Phillies\n\nHarper and Bohm homeruns are literally registering on the Penn State University Brandywine seismograph station.  The city is physically shaking. <a href='https://twitter.com/JeanLucPicard84/status/1587625558124404737/photo/1' class='tweet-link'>pic.twitter.com/etxDev9ILr</a>",
+		"meta": {
+			"likes": 16910,
+			"retweets": 2985,
+			"replies": 2
+		},
+		"misinformationScore": 0.2,
+		"explanation": {
+			"textScore": 0.7,
+			"linkScore": null,
+			"userScore": -0.3
+		},
+		"real": true,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1532382197855952896",
+		"user": {
+			"userId": "1969346438",
+			"name": "John Moffitt \ud83c\udf0a\ud83c\udf0a\ud83e\udde2\ud83e\udde2",
+			"username": "JohnRMoffitt",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1522446158362120192/5vCYg7Jc_normal.jpg"
+		},
+		"content": "My plan is to thank President Biden for giving Americans the cheapest gas prices on Earth. I gassed up today for $4.29 a gallon at Exxon. \n\nThanks Joe. <a href='https://twitter.com/JohnRMoffitt/status/1532382197855952896/photo/1' class='tweet-link'>pic.twitter.com/SJqWihmqj1</a> <a href='https://twitter.com/AdamKinzinger/status/1532358557252853763' class='tweet-link'>twitter.com/AdamKinzinger/\u2026</a>",
+		"meta": {
+			"likes": 110,
+			"retweets": 57,
+			"replies": 31
+		},
+		"misinformationScore": -0.55,
+		"explanation": {
+			"textScore": -0.4,
+			"linkScore": null,
+			"userScore": -0.7
+		},
+		"real": true,
+		"surveyGroup": 2
+	},
+	{
+		"tweetId": "1580104625411489792",
+		"user": {
+			"userId": "190229245",
+			"name": "Nobel Peace Center",
+			"username": "NobelPeaceOslo",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1047070489611571206/quFqKv58_normal.jpg"
+		},
+		"content": "\u00abThe ongoing campaign of harassment and intimidation against me and Rappler continues\u00bb, said Rappler CEO @mariaressa after the Court of Appeals denied her appeal. We support Maria Ressa\u2019s fight for independent media in the Philippines\u00a0#holdtheline\n\n<a href='https://www.rappler.com/nation/court-appeals-denies-maria-ressa-appeal-cyber-libel-case/' class='tweet-link'>rappler.com/nation/court-a\u2026</a>",
+		"meta": {
+			"likes": 6,
+			"retweets": 6,
+			"replies": 2
+		},
+		"misinformationScore": 0.6666666667,
+		"explanation": {
+			"textScore": 0.3,
+			"linkScore": 0.7,
+			"userScore": 1.0
+		},
+		"real": true,
+		"surveyGroup": 2
+	},
+	{
+		"tweetId": "1592279349939802114",
+		"user": {
+			"userId": "800533160488357889",
+			"name": "Jeff Melnick @JeffMelnick@mastodon.social",
+			"username": "melnickjeffrey1",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1455238936155115522/5TN_swV4_normal.jpg"
+		},
+		"content": "A recent study found that mindfulness and meditation can be as effective as Lexapro, a drug used to treat depression and anxiety. Source: <a href='https://www.npr.org/sections/health-shots/2022/11/09/1135211525/anxiety-medication-meditation-lexapro' class='tweet-link'>www.npr.org/sections/heal...</a>",
+		"meta": {
+			"likes": 179,
+			"retweets": 17,
+			"replies": 17
+		},
+		"misinformationScore": 0.3,
+		"explanation": {
+			"textScore": 0.2,
+			"linkScore": 0.9,
+			"userScore": -0.2
+		},
+		"real": false,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1523408788832747522",
+		"user": {
+			"userId": "998208585636237312",
+			"name": "Brian MD",
+			"username": "bone00afide",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1372394564934324227/sCPBQZJH_normal.jpg"
+		},
+		"content": "If Marsha Blackburn gets her way and makes contraception legal only for married couples, will she require people to lock up their condoms so their teens won\u2019t get them? Universal background checks for IUDs?",
+		"meta": {
+			"likes": 107,
+			"retweets": 18,
+			"replies": 9
+		},
+		"misinformationScore": -0.4,
+		"explanation": {
+			"textScore": -0.5,
+			"linkScore": null,
+			"userScore": -0.3
+		},
+		"real": true,
+		"surveyGroup": 3
+	},
+	{
+		"tweetId": "1592253569083838467",
+		"user": {
+			"userId": "2924211636",
+			"name": "Lulu Miller",
+			"username": "lmillernpr",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1506677516177743873/tEWiz17L_normal.jpg"
+		},
+		"content": "FRIENDS. LATIF AND I ARE ABOUT TO INTERVIEW THE SCIENTIST WHO SHOWED THAT EVOLUTION KEEPS MAKING CRABS. From separate, unrelated species, the crab shape KEEPS evolving, almost like an ideal form. Evolution wants a crab. Got any Qs? Big or Small?",
+		"meta": {
+			"likes": 33602,
+			"retweets": 1750,
+			"replies": 1312
+		},
+		"misinformationScore": -0.5,
+		"explanation": {
+			"textScore": -0.8,
+			"linkScore": null,
+			"userScore": 0.2
+		},
+		"real": false,
+		"surveyGroup": 2
+	},
+	{
+		"tweetId": "1586750930028199941",
+		"user": {
+			"userId": "600920098",
+			"name": "Medical Medium",
+			"username": "MedicalMedium",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1579850671439896577/jlSIJthN_normal.jpg"
+		},
+		"content": "Join me for the free 3-Day Medical Medium Wild Blueberry Challenge from November 15th-17th! This Challenge is devoted to celebrating and enjoying wild blueberries, which not only taste delicious, but are also my number one favorite healing food. When it comes to wild blueberries, we are talking about extremely high amounts of antioxidants, and antioxidants are a critical component of our health and wellbeing. I talk all about the healing properties of wild blueberries in Medical Medium Brain Saver: Answers to Brain Inflammation, Mental Health, Brain Fog, and Autoimmune & Eating Disorders.",
+		"meta": {
+			"likes": 55,
+			"retweets": 19,
+			"replies": 7
+		},
+		"misinformationScore": 0.2,
+		"explanation": {
+			"textScore": 0.8,
+			"linkScore": null,
+			"userScore": -0.6
+		},
+		"real": false,
+		"surveyGroup": 3
+	},
+	{
+		"tweetId": "1591696568998141953",
+		"user": {
+			"userId": "151535146",
+			"name": "Stephen Diehl",
+			"username": "smdiehl",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1282020927/magatar_normal.jpg"
+		},
+		"content": "New psychology research suggests your favorite songs reveal your attachment style <a href='https://medicalxpress.com/news/2022-11-psychology-favorite-songs-reveal-style.html' class='tweet-link'>medicalxpress.com/news/20...</a>",
+		"meta": {
+			"likes": 422,
+			"retweets": 61,
+			"replies": 14
+		},
+		"misinformationScore": 0.8,
+		"explanation": {
+			"textScore": 0.8,
+			"linkScore": -0.3,
+			"userScore": 0.7
+		},
+		"real": false,
+		"surveyGroup": 3
+	},
+	{
+		"tweetId": "1582743740879630336",
+		"user": {
+			"userId": "70736359",
+			"name": "Ed Hawkins",
+			"username": "ed_hawkins",
+			"verified": true,
+			"img": "https://pbs.twimg.com/profile_images/1505620129027178503/opG74IE4_normal.jpg"
+		},
+		"content": "A reminder of the choices that global society has to make about the climate:\nDelaying action on reducing emissions commits the world to live with severe consequences.\nRapid action now means a more habitable world for all.\nThere is no going back. Choose wisely. <a href='https://twitter.com/ed_hawkins/status/1582743740879630336/photo/1' class='tweet-link'>pic.twitter.com/9rtylqYrWB</a>",
+		"meta": {
+			"likes": 1586,
+			"retweets": 837,
+			"replies": 55
+		},
+		"misinformationScore": 0.4,
+		"explanation": {
+			"textScore": 0.3,
+			"linkScore": null,
+			"userScore": 0.5
+		},
+		"real": true,
+		"surveyGroup": 1
+	},
+	{
+		"tweetId": "1592174853418795012",
+		"user": {
+			"userId": "17026589",
+			"name": "JesseJenkins",
+			"username": "JesseJenkins",
+			"verified": false,
+			"img": "https://pbs.twimg.com/profile_images/1502089179584290819/mRtwEWf6_normal.jpg"
+		},
+		"content": "Whenever I talk about EVs, someone always asks \"what about emissions from battery production &amp; minerals?\" Turns out: upstream emissions associated with producing gasoline for an ICE vehicle are larger than those 'embedded' in minerals and battery production for an EV. \u2935\ufe0f <a href='https://twitter.com/edwnorris1/status/1592001027947257857' class='tweet-link'>twitter.com/edwnorris1/sta\u2026</a>",
+		"meta": {
+			"likes": 2262,
+			"retweets": 710,
+			"replies": 71
+		},
+		"misinformationScore": -0.5,
+		"explanation": {
+			"textScore": 0.0,
+			"linkScore": null,
+			"userScore": -0.5
+		},
+		"real": true,
+		"surveyGroup": 2
+	}
+]

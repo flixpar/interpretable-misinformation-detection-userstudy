@@ -1,163 +1,59 @@
+import pandas as pd
 import json
+import re
+import random
 
 
-tweet_misinformation_data = {
-	"1344763622371823622": {
-		"misinformationScore": 0.95,
-		"explanation": {
-			"textScore": 0.8,
-			"linkScore": 0.95,
-			"userScore": 0.85,
-			"engagementScore": 0.5
-		}
-	},
-	"1344415277728100360": {
-		"misinformationScore": 0.8,
-		"explanation": {
-			"textScore": 0.8,
-			"linkScore": -1,
-			"userScore": 0.95,
-			"engagementScore": 0.5
-		}
-	},
-	"1326131980413542400": {
-		"misinformationScore": 0.75,
-		"explanation": {
-			"textScore": 0.7,
-			"linkScore": 0.8,
-			"userScore": 0.6,
-			"engagementScore": 0.4
-		}
-	},
-	"1588683756743053317": {
-		"misinformationScore": 0.65,
-		"explanation": {
-			"textScore": 0.45,
-			"linkScore": 0.75,
-			"userScore": 0.58,
-			"engagementScore": 0.52
-		}
-	},
-	"1321240805965733889": {
-		"misinformationScore": 0.88,
-		"explanation": {
-			"textScore": 0.9,
-			"linkScore": 0.55,
-			"userScore": 0.55,
-			"engagementScore": -1
-		}
-	},
-	"1514263463706730507": {
-		"misinformationScore": 0.0,
-		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0,
-		}
-	},
-	"1590054649012178944": {
-		"misinformationScore": 0.0,
-		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0,
-		}
-	},
-	"1590003755898097668": {
-		"misinformationScore": 0.0,
-		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0,
-		}
-	},
-	"1589659716246175746": {
-		"misinformationScore": 0.0,
-		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0,
-		}
-	},
-	"1590321058384527360": {
-		"misinformationScore": 0.0,
-		"explanation": {
-			"textScore": 0.0,
-			"linkScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.0,
-		}
-	},
-	"1514263463706730507": {
-		"misinformationScore": 0.4,
-		"explanation": {
-			"textScore": 0.5,
-			"linkScore": 0.4,
-			"userScore": 0.2,
-			"engagementScore": 0.2
-		}
-	},
-	"1590054649012178944": {
-		"misinformationScore": 0.3,
-		"explanation": {
-			"textScore": 0.6,
-			"linkScore": 0.1,
-			"userScore": 0.1,
-			"engagementScore": 0.2
-		}
-	},
-	"1590003755898097668": {
-		"misinformationScore": 0.05,
-		"explanation": {
-			"textScore": 0.1,
-			"linkScore": 0.0,
-			"userScore": 0.0,
-			"engagementScore": 0.1
-		}
-	},
-	"1589659716246175746": {
-		"misinformationScore": 0.48,
-		"explanation": {
-			"textScore": 0.5,
-			"linkScore": -1,
-			"userScore": 0.4,
-			"engagementScore": 0.2
-		}
-	},
-	"1590321058384527360": {
-		"misinformationScore": 0.4,
-		"explanation": {
-			"textScore": 0.5,
-			"linkScore": -1,
-			"userScore": 0.2,
-			"engagementScore": 0.4
-		}
-	},
-}
+with open("userstudy_tweets_raw.json", "r") as f:
+	twitter_raw = json.load(f)
 
-with open("sample_tweets_raw.json", "r") as f:
-	data = json.load(f)
+tweets_raw = twitter_raw["data"]
+tweets_raw = {tweet["id"]: tweet for tweet in tweets_raw}
 
-tweets_raw = data["data"]
-
-users_raw = data["includes"]["users"]
+users_raw = twitter_raw["includes"]["users"]
 users = {user["id"]: user for user in users_raw}
 
-def tweet_content(tweet):
+data = pd.read_csv("../data/userstudy_rawdata.csv", dtype={"tweet_id": str}, na_values=["na"])
+data_dict = {t["tweet_id"]: t for t in data.to_dict(orient="records")}
+
+nan2none = lambda x: None if pd.isna(x) else x
+
+explanation_data = {t["tweet_id"]: {
+		"misinformationScore": t["overall_score"],
+		"explanation": {
+			"textScore": nan2none(t["text_score"]),
+			"linkScore": nan2none(t["link_score"]),
+			"userScore": nan2none(t["user_score"]),
+		},
+	} for t in data_dict.values()}
+
+def process_content(tweet, real):
 	text = tweet["text"]
-	if "entities" in tweet and "urls" in tweet["entities"]:
-		link_tag = lambda u: f"<a href='{u['expanded_url']}' class='tweet-link'>{u['display_url']}</a>"
-		for url_info in tweet["entities"]["urls"]:
-			text = text.replace(url_info["url"], link_tag(url_info))
+	if real:
+		if "entities" in tweet and "urls" in tweet["entities"]:
+			link_tag = lambda u: f"<a href='{u['expanded_url']}' class='tweet-link'>{u['display_url']}</a>"
+			for url_info in tweet["entities"]["urls"]:
+				text = text.replace(url_info["url"], link_tag(url_info))
+	else:
+		urls = re.findall(r"(https?://[^\s]+)", text)
+		for url in urls:
+			display_url = url.replace("https://", "").replace("http://", "")
+			if len(display_url) > 25:
+				display_url = f"{display_url[:25]}..."
+			text = text.replace(url, f"<a href='{url}' class='tweet-link'>{display_url}</a>")
 	return text
 
-def process_tweet(tweet):
-	tweet = {
-		"tweetId": tweet["id"],
+def format_tweet(tweet_id):
+	tweet = tweets_raw[tweet_id]
+	tweet_ann = data_dict[tweet_id]
+
+	if not tweet_ann["real"]:
+		tweet["text"] = tweet_ann["text"]
+
+	content = process_content(tweet, tweet_ann["real"])
+
+	output = {
+		"tweetId": tweet_id,
 		"user": {
 			"userId": tweet["author_id"],
 			"name": users[tweet["author_id"]]["name"],
@@ -165,18 +61,21 @@ def process_tweet(tweet):
 			"verified": users[tweet["author_id"]]["verified"],
 			"img": users[tweet["author_id"]]["profile_image_url"],
 		},
-		"content": tweet_content(tweet),
+		"content": content,
 		"meta": {
 			"likes": tweet["public_metrics"]["like_count"],
 			"retweets": tweet["public_metrics"]["retweet_count"],
 			"replies": tweet["public_metrics"]["reply_count"],
 		},
-		"misinformationScore": tweet_misinformation_data[tweet["id"]]["misinformationScore"],
-		"explanation": tweet_misinformation_data[tweet["id"]]["explanation"],
+		"misinformationScore": explanation_data[tweet_id]["misinformationScore"],
+		"explanation": explanation_data[tweet_id]["explanation"],
+		"real": tweet_ann["real"],
+		"surveyGroup": random.randint(1, 3),
 	}
-	return tweet
+	return output
 
-tweets = [process_tweet(tweet) for tweet in tweets_raw]
+tweet_ids = data.tweet_id.unique().tolist()
+tweets = [format_tweet(tweet_id) for tweet_id in tweet_ids]
 
-with open("sample_tweets.json", "w") as f:
+with open("userstudy_tweets.json", "w") as f:
 	json.dump(tweets, f, indent="\t")
