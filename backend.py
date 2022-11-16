@@ -17,6 +17,9 @@ def tweets():
 def survey(expl_level):
 	return render_template("survey.html")
 
+@app.route("/survey/complete")
+def survey_complete():
+	return render_template("survey-complete.html")
 
 @app.route("/survey", methods=["POST"])
 def handle_survey():
