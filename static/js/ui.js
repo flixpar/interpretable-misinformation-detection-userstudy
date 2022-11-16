@@ -2,15 +2,17 @@ export { Tweet, ExplainedTweet, SurveyTweet };
 
 
 function colorscale(score) {
-	let f = chroma.scale(["green", "yellow", "red"]).domain([0, 1]);
+	let f = chroma.scale(["red", "yellow", "green"]).domain([-1, 1]);
 	return f(score).hex();
 }
 
 function colorscaleSimple(score) {
-	if (score >= 0.5) {
-		return "red";
-	} else {
+	if (score >= -0.2 && score <= 0.2) {
+		return "gold";
+	} else if (score > 0.2) {
 		return "green";
+	} else {
+		return "red";
 	}
 }
 
@@ -18,11 +20,11 @@ const ScoreBar = {
 	props: ["scoreName", "score"],
 	data() {
 		let barWidth = 0, margin = 0;
-		if (this.score >= 0.5) {
-			barWidth = (this.score - 0.5) * 100;
+		if (this.score >= 0) {
+			barWidth = this.score * 50;
 			margin = 50;
 		} else {
-			barWidth = (0.5 - this.score) * 100;
+			barWidth = -this.score * 50;
 			margin = 50 - barWidth;
 		}
 		return {
@@ -32,7 +34,7 @@ const ScoreBar = {
 		}
 	},
 	template: `
-	<div class="explanation-score-bar mt-1" v-if="score>=0">
+	<div class="explanation-score-bar mt-1" v-if="score!=null">
 		<div class="flex flex-row justify-between">
 			<h4 class="font-semibold leading-4">{{ scoreName }}</h4>
 			<p class="text-xs leading-4">{{ (score*100).toFixed(0) }}%</p>
