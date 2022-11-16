@@ -12,12 +12,20 @@ const app = createApp({
 		const userGroup = parseInt(window.location.pathname.split("/")[2]);
 		const tweetGroup = getTweetGroupOrder(userGroup)[explanationTypeVal-1];
 
+		const roundInstructionsList = [
+			"Round 1: Try identifying misinformation in tweets with no assistance.",
+			"Round 2: The green, yellow, and red bars indicate whether our framework classifies a tweet as misinformation. You can use this information if you find it helpful.",
+			"Round 3: You can hover over the colored bars to learn more about how our framework classifies each tweet. You can use this information if you find it helpful.",
+		];
+		const roundInstructions = roundInstructionsList[explanationTypeVal-1];
+
 		return {
 			"tweets": [],
 			"explanationType": explanationType,
 			"explanationTypeVal": explanationTypeVal,
 			"userGroup": userGroup,
 			"tweetGroup": tweetGroup,
+			"roundInstructions": roundInstructions,
 		}
 	},
 	created() {
