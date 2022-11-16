@@ -18,14 +18,12 @@ const app = createApp({
 			"explanationTypeVal": explanationTypeVal,
 			"userGroup": userGroup,
 			"tweetGroup": tweetGroup,
-			"timer": null,
 		}
 	},
 	created() {
 		getTweetGroup(this.tweetGroup).then((tweets) => {
 			this.tweets = tweets;
 		});
-		this.timer = Date.now();
 	},
 	methods: {
 		next: function() {
@@ -51,7 +49,6 @@ const app = createApp({
 				body: JSON.stringify({
 					"surveyResults": surveyResults,
 					"explanationType": this.explanationType,
-					"elapsed": Date.now() - this.timer,
 				}),
 			}).then(response => {
 				if (response.ok) {
