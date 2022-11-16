@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template, send_file, request, session, jsonify
 
 from surveydb import db_session, User, TweetResponse
 
@@ -13,9 +13,36 @@ def index():
 def tweets():
 	return send_file("data/sample_tweets.json")
 
-@app.route("/survey")
+@app.route("/survey", methods=["GET", "POST"])
 def survey():
-	return render_template("survey.html")
+	if request.method == "GET":
+		return render_template("survey.html")
+	else:
+		request_data = request.get_json()
+
+		user_id = session.get("user_id", -1)
+		explanation_level = request_data["explanationType"]
+
+		for response in request_data["surveyResults"]:
+			tweet_id = response["tweetId"]
+			score = response["score"]
+			tweet_response = TweetResponse(tweet_id=tweet_id, user_id=user_id, response=score, explanation_level=explanation_level)
+			db_session.add(tweet_response)
+
+		db_session.commit()
+		return jsonify(success=True)
+
+@app.route("/responses")
+def responses():
+	responses = db_session.query(TweetResponse).all()
+	return jsonify([r.serialize for r in responses])
+
+@app.route("/reset-db")
+def reset_db():
+	db_session.query(TweetResponse).delete()
+	db_session.query(User).delete()
+	db_session.commit()
+	return jsonify(success=True)
 
 @app.teardown_appcontext
 def shutdown_session(exception=None):

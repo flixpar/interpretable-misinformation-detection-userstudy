@@ -90,6 +90,7 @@ const UserSurveyComponent = {
 	data() {
 		return {
 			"score": -1,
+			"surveyName": "survey-score-" + this.tweetId,
 		}
 	},
 	methods: {
@@ -101,23 +102,23 @@ const UserSurveyComponent = {
 	<div class="user-survey-component border-t pt-3 pb-1">
 		<div class="radio-button-group flex flex-row justify-evenly">
 			<div class="radio-button flex flex-col items-center">
-				<input type="radio" :id="radioId(1)" value="1" v-model="score">
+				<input type="radio" :id="radioId(1)" :name="surveyName" value="1" v-model="score">
 				<label class="radio-label text-xs text-gray-400" :for="radioId(1)">Not Misinformation</label>
 			</div>
 			<div class="radio-button flex flex-col items-center">
-				<input type="radio" :id="radioId(2)" value="2" v-model="score">
+				<input type="radio" :id="radioId(2)" :name="surveyName" value="2" v-model="score">
 				<label class="radio-label text-xs text-gray-400" :for="radioId(2)"></label>
 			</div>
 			<div class="radio-button flex flex-col items-center">
-				<input type="radio" :id="radioId(3)" value="3" v-model="score">
+				<input type="radio" :id="radioId(3)" :name="surveyName" value="3" v-model="score">
 				<label class="radio-label text-xs text-gray-400" :for="radioId(3)">Unsure</label>
 			</div>
 			<div class="radio-button flex flex-col items-center">
-				<input type="radio" :id="radioId(4)" value="4" v-model="score">
+				<input type="radio" :id="radioId(4)" :name="surveyName" value="4" v-model="score">
 				<label class="radio-label text-xs text-gray-400" :for="radioId(4)"></label>
 			</div>
 			<div class="radio-button flex flex-col items-center">
-				<input type="radio" :id="radioId(5)" value="5" v-model="score">
+				<input type="radio" :id="radioId(5)" :name="surveyName" value="5" v-model="score">
 				<label class="radio-label text-xs text-gray-400" :for="radioId(5)">Misinformation</label>
 			</div>
 		</div>

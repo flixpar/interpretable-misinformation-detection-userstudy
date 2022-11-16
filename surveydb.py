@@ -29,15 +29,27 @@ class TweetResponse(Base):
 	user = relationship("User", backref="responses")
 	tweet_id = Column(String(120))
 	response = Column(Integer)
+	explanation_level = Column(String(120))
 	created = Column(DateTime, default=datetime.datetime.now)
 
-	def __init__(self, tweet_id=None, user_id=None, response=None):
+	def __init__(self, tweet_id=None, user_id=None, response=None, explanation_level=None):
 		self.tweet_id = tweet_id
 		self.user_id = user_id
 		self.response = response
+		self.explanation_level = explanation_level
 
 	def __repr__(self):
 		return f"{self.tweet_id}: {self.response}"
+
+	@property
+	def serialize(self):
+		return {
+			"tweet_id": self.tweet_id,
+			"user_id": self.user_id,
+			"response": self.response,
+			"explanation_level": self.explanation_level,
+			"created": self.created
+		}
 
 def init_db():
 	Base.metadata.create_all(bind=engine)
