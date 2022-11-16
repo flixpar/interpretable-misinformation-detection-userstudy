@@ -15,6 +15,10 @@ def index():
 def tweets():
 	return send_file("data/sample_tweets.json")
 
+@app.route("/survey/intro")
+def survey_intro():
+	return render_template("survey-intro.html")
+
 @app.route("/survey/user", methods=["GET"])
 def survey_user():
 	return render_template("survey-user.html")
