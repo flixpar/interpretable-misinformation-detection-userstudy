@@ -1,4 +1,4 @@
-export { getAllTweets, getTweetGroup, getExampleTweets, getTweetGroupOrder };
+export { getAllTweets, getTweetGroup, getExampleTweets, getStaticTweets, getTweetGroupOrder };
 
 
 function getAllTweets() {
@@ -16,6 +16,11 @@ function getTweetGroup(tweetGroupNum) {
 
 function getExampleTweets() {
 	return fetch("/tweets/examples")
+		.then(response => response.json());
+}
+
+function getStaticTweets() {
+	return fetch("/data/userstudy_tweets.json")
 		.then(response => response.json());
 }
 
