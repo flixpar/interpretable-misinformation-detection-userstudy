@@ -20,7 +20,7 @@ function getExampleTweets() {
 }
 
 function getStaticTweets() {
-	return fetch("/data/userstudy_tweets.json")
+	return fetch("data/userstudy_tweets.json")
 		.then(response => response.json());
 }
 
